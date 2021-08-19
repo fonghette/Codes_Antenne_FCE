@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <GVL Name="GVL" Id="{92d912ee-e11b-473c-acc5-3a8186e58542}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// Constantes de contrôle à ne pas dépasser
+	dTemperature_Seuil_TBD : LREAL := 80000;
+	dTension_Max : LREAL := 300;
+	dCouple_Max : LREAL := 63 (*0.75 * 100 / 1.2*);
+	
+	// Peut-être à remplacer par les limites d'axes à définir dans MOTION -> Axes -> limit switches
+	Butee_Min_M1X : LREAL := -49;
+	Butee_Min_M1Y : LREAL := -17;
+	Butee_Min_M2X : LREAL := -100;
+	Butee_Min_M2Y : LREAL := -100;
+	Butee_Min_M3X : LREAL := -100;
+	Butee_Min_M3Y : LREAL := -100;
+	Butee_Max_M1X : LREAL := 39;
+	Butee_Max_M1Y : LREAL := 16;
+	Butee_Max_M2X : LREAL := 100;
+	Butee_Max_M2Y : LREAL := 100;
+	Butee_Max_M3X : LREAL := 100;
+	Butee_Max_M3Y : LREAL := 100;
+	
+	// Variable d'erreurs à envoyer au codac à intervalles de temps réguliers
+	arrErrorSystem : ARRAY[0..4] OF BOOL := [FALSE, FALSE, FALSE, FALSE, FALSE];
+	arrErrorTemperature : ARRAY[0..5] OF BOOL := [FALSE, FALSE, FALSE, FALSE, FALSE, FALSE];
+	arrErrorTension : ARRAY[0..2] OF BOOL := [FALSE, FALSE, FALSE];
+	arrErrorCouple : ARRAY[0..5] OF BOOL := [FALSE, FALSE, FALSE, FALSE];
+	arrErrorPosition : ARRAY[0..5] OF BOOL := [FALSE, FALSE, FALSE, FALSE];
+	
+	// Variable qui stocke l'état de la commande moteur
+	iEtatCmd : INT := 0;
+	
+	// Initialise la vitesse des moteurs
+	dVelocite : LREAL := 10;
+	dAcceleration : LREAL := 2;
+	dDeceleration : LREAL := 2;
+	dJerk : LREAL := 5000;
+	
+	// Définition des axes, doit être link aux axes du motion control
+	M1_X : AXIS_REF;
+	M1_Y : AXIS_REF;
+	M2_X : AXIS_REF;
+	M2_Y : AXIS_REF;
+	M3_X : AXIS_REF;
+	M3_Y : AXIS_REF;
+	
+	// Variable qui indique si une erreur est remarquée sur le système
+	bError : BOOL := FALSE;
+	
+	// Variable qui définit la position voulue par le PCS
+	dSetPosition_M1X : LREAL;
+	dSetPosition_M1Y : LREAL;
+	dSetPosition_M2X : LREAL;
+	dSetPosition_M2Y : LREAL;
+	dSetPosition_M3X : LREAL;
+	dSetPosition_M3Y : LREAL;
+	
+	// Variable qui retient si une erreur est survenue lors de la dernière commande
+	bErrorTwincat : BOOL;
+	
+	// Variable dont la valeur correspond à celle mesurée par le ThermoCouple indiqué
+	arrTemperatures : ARRAY[0..5] OF LREAL;
+	iTC1_M1 AT %I* : INT := 0;
+	iTC2_M1 AT %I* : INT := 0;
+	iTC1_M2 AT %I* : INT := 0;
+	iTC2_M2 AT %I* : INT := 0;
+	iTC1_M3 AT %I* : INT := 0;
+	iTC2_M3 AT %I* : INT := 0;
+		
+	// Variable dont la valeur correspond à celle mesurée par le capteur de tension du câble
+	arrTensions : ARRAY[0..2] OF LREAL;
+	iTension_M1 AT %I* : INT := 0;
+	iTension_M2 AT %I* : INT := 0;
+	iTension_M3 AT %I* : INT := 0;
+		
+	// Variable à remplacer par la vrai variable qui indique si les moteurs sont arrêtés
+	bMotor_Stopped : BOOL := FALSE;
+	
+	// Buffer qui contient les données d'intérêt des 200 dernières ms, ms étant l'index correspondant à la ms de l'instant t
+	arrData : ARRAY [0..199] OF ARRAY[0..14] OF LREAL;
+	ms : INT := 0;
+	
+	// Tableaux de données destinés à êtres récupérés par le CODAC -> faciliter l'accès aux données
+	arrValues : ARRAY[0..14] OF LREAL;
+	arrErrors : ARRAY[0..14] OF BOOL;
+	arrButees : ARRAY[0..11] OF LREAL;
+	
+	// Détecteur placé proche de la butée mécanique pour permettre le homing de la position et avoir à partir de ce point un mouvement relatif connu
+	bHomeSwitch_M1X AT %I*: BOOL;
+	bHomeSwitch_M1Y AT %I*: BOOL;
+	bHomeSwitch_M2X AT %I*: BOOL;
+	bHomeSwitch_M2Y AT %I*: BOOL;
+	bHomeSwitch_M3X AT %I*: BOOL;
+	bHomeSwitch_M3Y AT %I*: BOOL;
+	
+	// Définit le mouvement à faire pour retomber sur une consigne moteur correspondant au 0° à partir de la position de homing
+	dZero_M1X: LREAL;
+	dZero_M1Y: LREAL;
+	dZero_M2X: LREAL;
+	dZero_M2Y: LREAL;
+	dZero_M3X: LREAL;
+	dZero_M3Y: LREAL;
+	
+	// Définit la commande de couple de chaque axe
+	dSetTorque_M1X AT %Q*: UINT := 62;
+	dSetTorque_M1Y AT %Q*: UINT := 62;
+	dSetTorque_M2X AT %Q*: UINT := 62;
+	dSetTorque_M2Y AT %Q*: UINT := 62;
+	dSetTorque_M3X AT %Q*: UINT := 62;
+	dSetTorque_M3Y AT %Q*: UINT := 62;
+	
+	// Boolean qui indique si l'initialisation est bien réalisée 
+	bInit_OK: BOOL;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

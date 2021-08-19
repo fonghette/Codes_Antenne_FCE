@@ -1,0 +1,12 @@
+- aller dans le fichier d'en-tête sur Qt
+- Y insérer le chemin vers les librairies que l'on veut ajouter et qui ne sont pas naturellement trouvées par l'ordi
+- format par exemple pour moi : 
+	LIBS += -L$$PWD/'../../../../../../Program Files (x86)/Windows Kits/8.1/Lib/winv6.3/um/x64/' -lshell32
+
+	INCLUDEPATH += $$PWD/'../../../../../../Program Files (x86)/Windows Kits/8.1/Lib/winv6.3/um/x64'
+	DEPENDPATH += $$PWD/'../../../../../../Program Files (x86)/Windows Kits/8.1/Lib/winv6.3/um/x64'
+
+	unix|win32: LIBS += -L$$PWD/../../../../../../TwinCAT/AdsApi/TcAdsDll/x64/lib/ -lTcAdsDll
+
+	INCLUDEPATH += $$PWD/../../../../../../TwinCAT/AdsApi/TcAdsDll/x64
+	DEPENDPATH += $$PWD/../../../../../../TwinCAT/AdsApi/TcAdsDll/x64

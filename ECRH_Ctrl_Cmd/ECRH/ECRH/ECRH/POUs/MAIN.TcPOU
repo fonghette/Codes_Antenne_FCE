@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="MAIN" Id="{83b45f6f-87ae-405a-8cc9-134006965e3b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	Initialisation: INT := 0;
+	En_Attente: INT := 100;
+	En_Cours_De_Traitement: INT := 200;
+	Stop: INT := 300;
+	Reset: INT := 800;
+	Erreur: INT := 900;
+	
+	McPower_M1X : MC_Power;
+	McReset_M1X : MC_Reset;
+	McStop_M1X : MC_Stop;
+	McHome_M1X : MC_Home;
+	McMoveAbs_M1X : MC_MoveAbsolute;
+	
+	McPower_M1Y : MC_Power;
+	McReset_M1Y : MC_Reset;
+	McStop_M1Y : MC_Stop;
+	McHome_M1Y : MC_Home;
+	McMoveAbs_M1Y : MC_MoveAbsolute;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// A chaque itération, il faut penser à appeler la fonction pour que son statut (Done, Busy, Error) se mette à jour
+// Une façon de faire est d'appeler au début chaque fonction et de changer dans le corps du programme
+// seulement le execute qui vaut true ou false
+GVL.M1_X.ReadStatus();
+McPower_M1X(Axis:=GVL.M1_X,Enable:=TRUE,Enable_Positive:=TRUE,Enable_Negative:=TRUE,Override:=100);
+McReset_M1X(Axis:=GVL.M1_X);
+McHome_M1X(Axis:=GVL.M1_X,bCalibrationCam := GVL.bHomeSwitch_M1X);
+McMoveAbs_M1X(Axis:=GVL.M1_X);
+McStop_M1X(Axis:=GVL.M1_X);
+
+GVL.M1_Y.ReadStatus();
+McPower_M1Y(Axis:=GVL.M1_Y,Enable:=TRUE,Enable_Positive:=TRUE,Enable_Negative:=TRUE,Override:=100);
+McReset_M1Y(Axis:=GVL.M1_Y);
+McHome_M1Y(Axis:=GVL.M1_Y,bCalibrationCam := GVL.bHomeSwitch_M1Y);
+McMoveAbs_M1Y(Axis:=GVL.M1_Y);
+McStop_M1Y(Axis:=GVL.M1_Y);
+
+// Permet d'actualiser les données qui vont transités par ADS vers le CODAC
+pCTRL_CODAC();
+
+CASE GVL.iEtatCmd OF
+
+	// INITIALISATION
+	0: 
+		// On commence par tout disable pour être sûr qu'il n'y ait pas d'erreur
+		McReset_M1X(Axis:=GVL.M1_X, Execute:=FALSE);
+		McHome_M1X(Axis:=GVL.M1_X,bCalibrationCam := GVL.bHomeSwitch_M1X, Execute:=FALSE);
+		McMoveAbs_M1X(Axis:=GVL.M1_X, Execute:=FALSE);
+		McStop_M1X(Axis:=GVL.M1_X, Execute:=FALSE);
+		
+		McReset_M1Y(Axis:=GVL.M1_Y, Execute:=FALSE);
+		McHome_M1Y(Axis:=GVL.M1_Y,bCalibrationCam := GVL.bHomeSwitch_M1Y, Execute:=FALSE);
+		McMoveAbs_M1Y(Axis:=GVL.M1_Y, Execute:=FALSE);
+		McStop_M1Y(Axis:=GVL.M1_Y, Execute:=FALSE);
+		
+		// L'initialisation n'est pas faite donc on assigne FALSE
+		GVL.bInit_OK := FALSE;
+	
+		// On commence par lancer un reset des axes
+		McReset_M1X(Axis:= GVL.M1_X, Execute:= TRUE);
+		McReset_M1Y(Axis:= GVL.M1_Y, Execute:= TRUE);
+		IF GVL.bError OR McReset_M1X.Error OR McReset_M1Y.Error THEN
+			GVL.iEtatCmd := Erreur;
+		ELSE
+			GVL.iEtatCmd := 5;				
+		END_IF
+		
+		// On assigne au tableau de butées les valeurs à récupérer au CODAC
+		GVL.arrButees[0]:=GVL.Butee_Min_M1X;
+		GVL.arrButees[1]:=GVL.Butee_Max_M1X;
+		GVL.arrButees[2]:=GVL.Butee_Min_M1Y;
+		GVL.arrButees[3]:=GVL.Butee_Max_M1Y;
+		GVL.arrButees[4]:=GVL.Butee_Min_M2X;
+		GVL.arrButees[5]:=GVL.Butee_Max_M2X;
+		GVL.arrButees[6]:=GVL.Butee_Min_M2Y;
+		GVL.arrButees[7]:=GVL.Butee_Max_M2Y;
+		GVL.arrButees[8]:=GVL.Butee_Min_M3X;
+		GVL.arrButees[9]:=GVL.Butee_Max_M3X;
+		GVL.arrButees[10]:=GVL.Butee_Min_M3Y;
+		GVL.arrButees[11]:=GVL.Butee_Max_M3Y;
+	
+	// On attend la fin du reset
+	5: 
+		IF GVL.bError OR McReset_M1X.Error OR McReset_M1Y.Error THEN
+			GVL.iEtatCmd := Erreur;
+		ELSIF McReset_M1X.Done AND McReset_M1Y.Done THEN
+			 GVL.iEtatCmd := 20;		
+			McReset_M1X(Axis:= GVL.M1_X, Execute:= FALSE);
+			McReset_M1Y(Axis:= GVL.M1_Y, Execute:= FALSE);		
+		END_IF
+		
+	(* 10 réservée à la commande de limitation de couple originellement
+	   finalement, celle-ci se réalise directement via la variable globale SetTorque
+	   qui est linkée à bipolar torque limit au niveau du drive *)
+
+	// On lance un homing général qui met le système au niveau du point connu avec la distance adaptée. 
+	// La première fois, faire le homing jusqu'à 0 et déplacer le moteur jusqu'à la position de 0°
+	// Configurer cette distance dans la calibration value sous M1_X -> Enc -> Homing -> Calibration value
+	// Le 0 absolu est maintenant configuré au niveau du 0° et le homing arrive à -Dist
+	20: 
+		McHome_M1X(Axis:=GVL.M1_X, Execute:= TRUE, bCalibrationCam := GVL.bHomeSwitch_M1X, Position:= GVL.dZero_M1X);
+		McHome_M1Y(Axis:=GVL.M1_Y, Execute:= TRUE, bCalibrationCam := GVL.bHomeSwitch_M1Y, Position:= GVL.dZero_M1Y);
+		IF GVL.bError OR McHome_M1X.Error OR McHome_M1Y.Error THEN
+			GVL.iEtatCmd := 900;
+		ELSE
+			GVL.iEtatCmd := 25;
+		END_IF
+			
+	// On attend la fin du homing
+	25: 
+		IF McHome_M1Y.Error OR McHome_M1X.Error OR GVL.bError THEN
+			GVL.iEtatCmd := Erreur;
+		ELSIF McHome_M1X.Done AND McHome_M1Y.Done THEN
+			McHome_M1X(Axis:= GVL.M1_X, Execute:= FALSE);
+			McHome_M1Y(Axis:= GVL.M1_Y, Execute:= FALSE);
+			GVL.iEtatCmd := 30;		
+		END_IF
+		
+	// On fait un mouvement vers le 0 absolu  -- Seulement si la calibration value ne marche pas (30 à 50 inutile normalement)
+	30: 
+		McMoveAbs_M1X(Axis:=GVL.M1_X,
+					Position:= 0,
+					Velocity:= GVL.dVelocite,
+					Acceleration:= GVL.dAcceleration,
+					Deceleration:= GVL.dDeceleration,
+					Jerk:= GVL.dJerk,
+					Execute:= TRUE);
+		McMoveAbs_M1Y(Axis:=GVL.M1_Y,
+					Position:= 0,
+					Velocity:= GVL.dVelocite,
+					Acceleration:= GVL.dAcceleration,
+					Deceleration:= GVL.dDeceleration,
+					Jerk:= GVL.dJerk,
+					Execute:= TRUE);
+		IF GVL.bError OR McMoveAbs_M1X.Error OR McMoveAbs_M1Y.Error THEN
+			GVL.iEtatCmd := 900;
+		ELSE
+			GVL.iEtatCmd := 35;
+		END_IF
+	
+	35: // On attend le mouvement vers le 0 absolu
+		IF McMoveAbs_M1Y.Error OR McMoveAbs_M1X.Error OR GVL.bError THEN
+			GVL.iEtatCmd := Erreur;
+		ELSIF McMoveAbs_M1X.Done AND McMoveAbs_M1Y.Done THEN
+			McMoveAbs_M1X(Axis:= GVL.M1_X, Execute:= FALSE);
+			McMoveAbs_M1Y(Axis:= GVL.M1_Y, Execute:= FALSE);
+			GVL.bInit_OK:= TRUE;
+			GVL.iEtatCmd := En_Attente;		
+		END_IF
+	
+	100: // En attente d'un changement induit en ADS ou d'une erreur
+		IF GVL.bError THEN
+			GVL.iEtatCmd := Erreur;
+		END_IF
+		
+	// Entâme de la phase de mouvement moteur : 
+	// Déplacement moteur miroir en premier hors butees (PAS FORCEMENT NECESSAIRE) 
+	// Déplacement cadre vers position voulue
+	// Deplacement miroir vers position voulue
+	// Retour en phase d'attente
+	200:
+		McMoveAbs_M1Y(Axis:=GVL.M1_Y,
+					Position:= 0,
+					Velocity:= GVL.dVelocite,
+					Acceleration:= GVL.dAcceleration,
+					Deceleration:= GVL.dDeceleration,
+					Jerk:= GVL.dJerk,
+					Execute:= TRUE);
+		IF GVL.bError OR McMoveAbs_M1Y.Error THEN
+			GVL.iEtatCmd := Erreur;
+		ELSIF McMoveAbs_M1Y.Busy THEN
+			GVL.iEtatCmd := 210;				
+		END_IF
+		
+	210: // Attente du mouvement des miroirs à 0 mm
+		IF McMoveAbs_M1Y.Error OR GVL.bError THEN
+			GVL.iEtatCmd := Erreur;
+		ELSIF McMoveAbs_M1Y.Done THEN
+			McMoveAbs_M1Y(Axis:= GVL.M1_Y, Execute:= FALSE);
+			GVL.iEtatCmd := 220;		
+		END_IF
+		
+	220: // Déplacement du cadre à la position voulue
+		McMoveAbs_M1X(Axis:=GVL.M1_X,
+					Position:= GVL.dSetPosition_M1X,
+					Velocity:= GVL.dVelocite,
+					Acceleration:= GVL.dAcceleration,
+					Deceleration:= GVL.dDeceleration,
+					Jerk:= GVL.dJerk,
+					Execute:= TRUE);
+		IF GVL.bError OR McMoveAbs_M1X.Error THEN
+			GVL.iEtatCmd := 900;
+		ELSIF McMoveAbs_M1X.Busy THEN
+			GVL.iEtatCmd := 230;
+		END_IF
+	
+	230: // On attend la fin du mouvement
+		IF McMoveAbs_M1X.Error OR GVL.bError THEN
+			GVL.iEtatCmd := Erreur;
+		ELSIF McMoveAbs_M1X.Done THEN
+			McMoveAbs_M1X(Axis:= GVL.M1_X, Execute:= FALSE);
+			GVL.iEtatCmd := 240;		
+		END_IF
+		
+	240: // On déplace le miroir à la position voulue
+		McMoveAbs_M1Y(Axis:=GVL.M1_Y,
+					Position:= GVL.dSetPosition_M1Y,
+					Velocity:= GVL.dVelocite,
+					Acceleration:= GVL.dAcceleration,
+					Deceleration:= GVL.dDeceleration,
+					Jerk:= GVL.dJerk,
+					Execute:= TRUE);
+		IF GVL.bError OR McMoveAbs_M1Y.Error THEN
+			GVL.iEtatCmd := Erreur;
+		ELSE
+			GVL.iEtatCmd := 250;				
+		END_IF
+		
+	250: // On attend et on met en attente
+		IF McMoveAbs_M1Y.Error OR GVL.bError THEN
+			GVL.iEtatCmd := Erreur;
+		ELSIF McMoveAbs_M1Y.Done THEN
+			McMoveAbs_M1Y(Axis:= GVL.M1_Y, Execute:= FALSE);
+			GVL.iEtatCmd := 100;		
+		END_IF
+	
+	// Commande d'annulation de la commande moteurs
+	// Pour cela on vient arrêter proprement le mouvement des moteurs via un stop
+	300:
+		McStop_M1X(Axis:=GVL.M1_X, Execute:=TRUE, Deceleration:=40, Jerk:=GVL.dJerk);
+		McStop_M1Y(Axis:=GVL.M1_Y, Execute:=TRUE, Deceleration:=40, Jerk:=GVL.dJerk);
+		IF GVL.bError OR McStop_M1Y.Error OR McStop_M1X.Error THEN
+			GVL.iEtatCmd := Erreur;
+		ELSIF McStop_M1Y.Busy AND McStop_M1X.Busy THEN
+			GVL.iEtatCmd := 310;				
+		END_IF
+	
+	// On attend la fin du stop et on oublie pas de disable le McMove pour ne pas que la commande reste active
+	310:
+		IF GVL.bError OR McStop_M1X.Error OR McStop_M1Y.Error THEN
+			GVL.iEtatCmd := Erreur;
+		ELSIF McStop_M1X.Done AND McStop_M1Y.Done THEN
+			 GVL.iEtatCmd := 100;		
+			McStop_M1X(Axis:= GVL.M1_X, Execute:= FALSE);
+			McStop_M1Y(Axis:= GVL.M1_Y, Execute:= FALSE);	
+			McMoveAbs_M1X(Axis:= GVL.M1_X, Execute := FALSE);
+			McMoveAbs_M1Y(Axis:= GVL.M1_Y, Execute := FALSE);
+		END_IF
+		
+	// On lance un reset général
+	800:
+		McReset_M1X(Axis:= GVL.M1_X, Execute:= TRUE);
+		McReset_M1Y(Axis:= GVL.M1_Y, Execute:= TRUE);
+		IF McReset_M1X.Error OR McReset_M1Y.Error THEN
+			GVL.iEtatCmd := Erreur;
+		ELSE
+			GVL.iEtatCmd := 810;				
+		END_IF
+	
+	// Lorsque celui-ci est effectué et si le système n'est pas en butée, on se met en attente
+	810:
+		IF McReset_M1X.Error OR McReset_M1Y.Error THEN
+			GVL.iEtatCmd := Erreur;
+		ELSIF McReset_M1X.Done AND McReset_M1Y.Done THEN		
+			McReset_M1X(Axis:= GVL.M1_X, Execute:= FALSE);
+			McReset_M1Y(Axis:= GVL.M1_Y, Execute:= FALSE);	
+			IF GVL.arrErrorSystem[0] THEN
+				GVL.iEtatCmd := 820;
+			ELSE
+				IF GVL.bInit_OK THEN
+					GVL.iEtatCmd := 100;
+				ELSE
+					GVL.iEtatCmd := 20;
+				END_IF
+			END_IF
+		END_IF
+	
+	// Si le système est en butée, on le sort des butées
+	820:
+		IF GVL.M1_X.NcToPlc.ActPos >= GVL.Butee_Max_M1X THEN
+			McMoveAbs_M1X(Axis:=GVL.M1_X,
+					Position:= GVL.Butee_Max_M1X - 5,
+					Velocity:= GVL.dVelocite,
+					Acceleration:= GVL.dAcceleration,
+					Deceleration:= GVL.dDeceleration,
+					Jerk:= GVL.dJerk,
+					Execute:= TRUE);
+		ELSIF GVL.M1_X.NcToPlc.ActPos <= GVL.Butee_Min_M1X THEN
+			McMoveAbs_M1X(Axis:=GVL.M1_X,
+					Position:= GVL.Butee_Min_M1X + 5,
+					Velocity:= GVL.dVelocite,
+					Acceleration:= GVL.dAcceleration,
+					Deceleration:= GVL.dDeceleration,
+					Jerk:= GVL.dJerk,
+					Execute:= TRUE);
+		ELSIF GVL.M1_Y.NcToPlc.ActPos <= GVL.Butee_Min_M1Y THEN
+			McMoveAbs_M1Y(Axis:=GVL.M1_Y,
+					Position:= GVL.Butee_Min_M1Y + 5,
+					Velocity:= GVL.dVelocite,
+					Acceleration:= GVL.dAcceleration,
+					Deceleration:= GVL.dDeceleration,
+					Jerk:= GVL.dJerk,
+					Execute:= TRUE);
+		ELSIF GVL.M1_Y.NcToPlc.ActPos >= GVL.Butee_Max_M1Y THEN
+			McMoveAbs_M1Y(Axis:=GVL.M1_Y,
+					Position:= GVL.Butee_Max_M1Y - 5,
+					Velocity:= GVL.dVelocite,
+					Acceleration:= GVL.dAcceleration,
+					Deceleration:= GVL.dDeceleration,
+					Jerk:= GVL.dJerk,
+					Execute:= TRUE);
+		END_IF
+		GVL.iEtatCmd := 830;
+	
+	// On attend la sortie de la butée
+	830:
+		IF McMoveAbs_M1X.Error OR McMoveAbs_M1Y.Error THEN
+			GVL.iEtatCmd := 900;
+		ELSIF McMoveAbs_M1X.Done OR McMoveAbs_M1Y.Done THEN
+			McMoveAbs_M1X(Axis:= GVL.M1_X, Execute:= FALSE);
+			McMoveAbs_M1Y(Axis:= GVL.M1_Y, Execute:= FALSE);
+			IF GVL.bInit_OK THEN
+				GVL.iEtatCmd := 100;
+			ELSE
+				GVL.iEtatCmd := 20;
+			END_IF
+		END_IF
+		
+	// Traitement de l'erreur
+	900:
+		IF GVL.arrErrorSystem[0] THEN
+			GVL.iEtatCmd := 910;
+		ELSE
+			GVL.iEtatCmd := 990;
+		END_IF
+		
+	// Erreur liée à la position, on arrête vite les moteurs pour ne pas forcer sur la butée
+	910:
+		McStop_M1X(Axis:=GVL.M1_X, Execute:=TRUE, Deceleration:=40, Jerk:=GVL.dJerk);
+		McStop_M1Y(Axis:=GVL.M1_Y, Execute:=TRUE, Deceleration:=40, Jerk:=GVL.dJerk);
+		IF McStop_M1X.Error OR McStop_M1X.Error THEN
+			GVL.iEtatCmd := 990;
+		ELSIF McStop_M1X.Busy AND McStop_M1Y.Busy THEN
+			GVL.iEtatCmd := 920;
+		END_IF
+	
+	// Lorsque c'est fait on se place dans l'état d'erreur général
+	920:
+		IF McStop_M1X.Error OR McStop_M1Y.Error THEN
+			GVL.iEtatCmd := Erreur;
+		ELSIF McStop_M1X.Done AND McStop_M1Y.Done THEN
+			GVL.iEtatCmd := 990;		
+			McStop_M1X(Axis:= GVL.M1_X, Execute:= FALSE);
+			McStop_M1Y(Axis:= GVL.M1_Y, Execute:= FALSE);	
+			McMoveAbs_M1X(Axis:= GVL.M1_X, Execute := FALSE);
+			McMoveAbs_M1Y(Axis:= GVL.M1_Y, Execute := FALSE);
+		END_IF
+	
+	// Etat général d'erreur dans lequel on disable tout et on attend une action par le CODAC 
+	990:
+		McReset_M1X(Axis:=GVL.M1_X, Execute:=FALSE);
+		McHome_M1X(Axis:=GVL.M1_X,bCalibrationCam := GVL.bHomeSwitch_M1X, Execute:=FALSE);
+		McMoveAbs_M1X(Axis:=GVL.M1_X, Execute:=FALSE);
+		McStop_M1X(Axis:=GVL.M1_X, Execute:=FALSE);
+		
+		McReset_M1Y(Axis:=GVL.M1_Y, Execute:=FALSE);
+		McHome_M1Y(Axis:=GVL.M1_Y,bCalibrationCam := GVL.bHomeSwitch_M1Y, Execute:=FALSE);
+		McMoveAbs_M1Y(Axis:=GVL.M1_Y, Execute:=FALSE);
+		McStop_M1Y(Axis:=GVL.M1_Y, Execute:=FALSE);
+		
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="614" Count="1" />
+      <LineId Id="617" Count="0" />
+      <LineId Id="26" Count="4" />
+      <LineId Id="239" Count="0" />
+      <LineId Id="31" Count="5" />
+      <LineId Id="238" Count="0" />
+      <LineId Id="618" Count="0" />
+      <LineId Id="37" Count="3" />
+      <LineId Id="595" Count="0" />
+      <LineId Id="41" Count="1" />
+      <LineId Id="596" Count="0" />
+      <LineId Id="316" Count="4" />
+      <LineId Id="322" Count="2" />
+      <LineId Id="313" Count="0" />
+      <LineId Id="565" Count="0" />
+      <LineId Id="593" Count="0" />
+      <LineId Id="566" Count="0" />
+      <LineId Id="314" Count="0" />
+      <LineId Id="594" Count="0" />
+      <LineId Id="43" Count="6" />
+      <LineId Id="669" Count="13" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="597" Count="0" />
+      <LineId Id="51" Count="6" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="567" Count="3" />
+      <LineId Id="598" Count="3" />
+      <LineId Id="105" Count="0" />
+      <LineId Id="110" Count="16" />
+      <LineId Id="104" Count="0" />
+      <LineId Id="127" Count="0" />
+      <LineId Id="602" Count="0" />
+      <LineId Id="129" Count="26" />
+      <LineId Id="571" Count="0" />
+      <LineId Id="156" Count="5" />
+      <LineId Id="128" Count="0" />
+      <LineId Id="162" Count="0" />
+      <LineId Id="170" Count="3" />
+      <LineId Id="169" Count="0" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="174" Count="62" />
+      <LineId Id="168" Count="0" />
+      <LineId Id="164" Count="0" />
+      <LineId Id="603" Count="1" />
+      <LineId Id="165" Count="0" />
+      <LineId Id="242" Count="0" />
+      <LineId Id="237" Count="0" />
+      <LineId Id="243" Count="3" />
+      <LineId Id="240" Count="0" />
+      <LineId Id="247" Count="0" />
+      <LineId Id="605" Count="0" />
+      <LineId Id="248" Count="0" />
+      <LineId Id="250" Count="5" />
+      <LineId Id="529" Count="1" />
+      <LineId Id="249" Count="0" />
+      <LineId Id="166" Count="0" />
+      <LineId Id="606" Count="0" />
+      <LineId Id="167" Count="0" />
+      <LineId Id="257" Count="5" />
+      <LineId Id="256" Count="0" />
+      <LineId Id="263" Count="0" />
+      <LineId Id="607" Count="0" />
+      <LineId Id="264" Count="0" />
+      <LineId Id="266" Count="2" />
+      <LineId Id="270" Count="1" />
+      <LineId Id="487" Count="2" />
+      <LineId Id="640" Count="0" />
+      <LineId Id="490" Count="0" />
+      <LineId Id="641" Count="2" />
+      <LineId Id="486" Count="0" />
+      <LineId Id="265" Count="0" />
+      <LineId Id="446" Count="0" />
+      <LineId Id="608" Count="0" />
+      <LineId Id="447" Count="35" />
+      <LineId Id="609" Count="0" />
+      <LineId Id="483" Count="0" />
+      <LineId Id="560" Count="1" />
+      <LineId Id="484" Count="0" />
+      <LineId Id="558" Count="1" />
+      <LineId Id="644" Count="3" />
+      <LineId Id="485" Count="0" />
+      <LineId Id="442" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="610" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="514" Count="3" />
+      <LineId Id="512" Count="0" />
+      <LineId Id="518" Count="0" />
+      <LineId Id="611" Count="0" />
+      <LineId Id="519" Count="2" />
+      <LineId Id="525" Count="1" />
+      <LineId Id="522" Count="2" />
+      <LineId Id="532" Count="0" />
+      <LineId Id="612" Count="0" />
+      <LineId Id="533" Count="0" />
+      <LineId Id="535" Count="5" />
+      <LineId Id="562" Count="1" />
+      <LineId Id="543" Count="1" />
+      <LineId Id="613" Count="0" />
+      <LineId Id="545" Count="0" />
+      <LineId Id="549" Count="4" />
+      <LineId Id="555" Count="2" />
+      <LineId Id="546" Count="0" />
+      <LineId Id="58" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

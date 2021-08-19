@@ -1,0 +1,2454 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.17" ClassName="CDevEtherCATDef" SubType="111">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
+			<BitSize>1</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>1</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
+			<BitSize>5</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>5</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
+			<BitSize>7</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>7</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ff808080808080808080808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1001">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff00ff0000ff0000ff0000ff0000ff0000ff00c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff00ff0000ff0000ff0000ff0000ff0000ff00c0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff00ff0000ff0000ff0000ff0000ff0000ff00c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff00ff0000ff0000ff0000ff0000ff0000ff00c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff00ff0000ff0000ff0000ff0000ff0000ff00c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff00ff0000ff0000ff0000ff0000ff0000ff00c0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff00ff0000ff0000ff0000ff0000ff0000ff00c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1002">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000120b0000120b00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1003">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000120b0000120b00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0808080808080c0c0c0c0c0c080808000bfffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c080808080808000bfff00bfff00bfff00bfff00bfffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0808080808080c0c0c000000000000000bfff000000ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c080808080808000bfff00bfff00bfff00bfff00bfff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0808080808080c0c0c0c0c0c080808000bfffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0bbc2bbc0c0c0c0c0c0c0c0c0808080ff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0bac2ba0bfc0bc0c0c0c0c0c0c0c0c0808080ff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ff</ImageData>
+		<ImageData Id="1004">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ff00bfffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c080808000bfff00bfff00bfff00bfff00bfffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ff00bfffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1005">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c08080800000ff000000000000000000000000000000000000000000ff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c08080800000ff0000000000000000000000000000000000000000000000ff0000ffff00ffc0c0c0c0c0c0ff0000c0c0c08080800000ff000000000000000000000000000000000000000000ff00ffff00ffff00ffc0c0c0ff0000ff0000ff00008080800000ffff00ffff00ffff00ff000000ff00ffff00ff000000ff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000ff00ffff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000000000000000000000000000000000000000000000ff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c08080800000000000000000000000000000000000000000000000000000ff0000ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000000000000000000000000000000000000000000000ff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000ff00ffff00ffff00ff000000ff00ffff00ff000000ff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080</ImageData>
+	</ImageDatas>
+	<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="5.15.239.174.2.1" RemoteName="Device 1 (EtherCAT)" InfoImageId="2">
+		<Name>__FILENAME__</Name>
+		<AddressInfo>
+			<Ccat>
+				<Address>-41943040</Address>
+				<Offset>131072</Offset>
+				<Size>8192</Size>
+				<BaseAddr>0</BaseAddr>
+				<BusNo>1</BusNo>
+				<SlotNo>0</SlotNo>
+				<VendorId>5612</VendorId>
+				<DeviceId>20480</DeviceId>
+				<Dma>
+					<Address>0</Address>
+					<Offset>4096</Offset>
+					<Size>256</Size>
+					<BaseAddr>2</BaseAddr>
+					<RxChn>0</RxChn>
+					<TxChn>1</TxChn>
+				</Dma>
+				<Identification>
+					<Value>1022134156</Value>
+					<Version>1</Version>
+					<Size>256</Size>
+				</Identification>
+			</Ccat>
+		</AddressInfo>
+		<Image Id="1" AddrType="9" ImageType="3">
+			<Name>Image</Name>
+		</Image>
+		<Image Id="4" AddrType="10" ImageType="3">
+			<Name>Image-2</Name>
+		</Image>
+		<Box Id="1" BoxType="9099">
+			<Name>Term 1 (EK1200)</Name>
+			<ImageId>1000</ImageId>
+			<EtherCAT PdiType="#x0100" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04b02c52" RevisionNo="#x00001388" InfoDataState="false" PortPhys="49" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1200-5000 EtherCAT Power supply (2A E-Bus)" Desc="EK1200" PortABoxInfo="#x00ffffff"/>
+			<Box Id="2" BoxType="9099">
+				<Name>Term 2 (EL1004)</Name>
+				<ImageId>7</ImageId>
+				<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03ec3052" RevisionNo="#x00100000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1004 4Ch. Dig. Input 24V, 3ms" Desc="EL1004" PortABoxInfo="#x01000001">
+					<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
+					<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+					<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6000" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6010" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6020" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6030" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+				</EtherCAT>
+			</Box>
+			<Box Id="3" BoxType="9099">
+				<Name>Term 3 (EL1004)</Name>
+				<ImageId>7</ImageId>
+				<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03ec3052" RevisionNo="#x00100000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1004 4Ch. Dig. Input 24V, 3ms" Desc="EL1004" PortABoxInfo="#x01000002">
+					<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
+					<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+					<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6000" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6010" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6020" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6030" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+				</EtherCAT>
+			</Box>
+			<Box Id="4" BoxType="9099">
+				<Name>Term 4 (EL1004)</Name>
+				<ImageId>7</ImageId>
+				<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03ec3052" RevisionNo="#x00100000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1004 4Ch. Dig. Input 24V, 3ms" Desc="EL1004" PortABoxInfo="#x01000003">
+					<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
+					<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+					<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6000" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6010" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6020" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="0">
+						<Entry Name="Input" Index="#x6030" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+				</EtherCAT>
+			</Box>
+			<Box Id="5" BoxType="9099" BoxFlags="#x00000020">
+				<Name>Term 5 (EL3255)</Name>
+				<ImageId>1001</ImageId>
+				<EtherCAT SlaveType="2" PdiType="#x0405" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x0cb73052" RevisionNo="#x00120000" InfoDataAddr="true" TimeoutMailbox2="2000" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL3255 5Ch. potentiometer measurement with sensor supply" Desc="EL3255" PortABoxInfo="#x01000004">
+					<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
+					<SyncMan>801080002200010002000000800080008000801022010000</SyncMan>
+					<SyncMan>001100000400000003000000000000000000001104000000</SyncMan>
+					<SyncMan>801114002000010004000000000000001400801120010000</SyncMan>
+					<Fmmu>0000000000000000801100010100000002000000000000000000000000000000</Fmmu>
+					<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+					<BootStrapData>0010f400f410f400</BootStrapData>
+					<DcMode>53796e6368726f6e00000000000000004672656552756e2f534d2d53796e6368726f6e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DcMode>
+					<DcMode>4443000000000000000000000000000044432d53796e6368726f6e0000000000000000000000000000000000000000000000000000000000204e0000000000070100000000000000000000000000000000000000000000000000000000000000</DcMode>
+					<DcMode>4443494e00000000000000000000000044432d53796e6368726f6e2028696e70757420626173656429000000000000000000000000000000a0860100000000070100000000000000000001000000000000000000000000000000000000000000</DcMode>
+					<Pdo Name="AI Standard Channel 1" Index="#x1a00" Flags="#x0010" SyncMan="3">
+						<ExcludePdo>#x1a01</ExcludePdo>
+						<Entry Name="Status__Underrange" Index="#x6000" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6000" Sub="#x02">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6000" Sub="#x03">
+							<Type>BIT2</Type>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6000" Sub="#x05">
+							<Type>BIT2</Type>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6000" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Gap">
+							<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Gap">
+							<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Sync error" Index="#x1c33" Sub="#x20">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x1800" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1800" Sub="#x09">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Value" Index="#x6000" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Compact Channel 1" Index="#x1a01" Flags="#x0010">
+						<ExcludePdo>#x1a00</ExcludePdo>
+						<Entry Name="Value" Index="#x6000" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Standard Channel 2" Index="#x1a02" Flags="#x0010" SyncMan="3">
+						<ExcludePdo>#x1a03</ExcludePdo>
+						<Entry Name="Status__Underrange" Index="#x6010" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6010" Sub="#x02">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6010" Sub="#x03">
+							<Type>BIT2</Type>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6010" Sub="#x05">
+							<Type>BIT2</Type>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6010" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Gap">
+							<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Gap">
+							<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Sync error" Index="#x1c33" Sub="#x20">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x1802" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1802" Sub="#x09">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Value" Index="#x6010" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Compact Channel 2" Index="#x1a03" Flags="#x0010">
+						<ExcludePdo>#x1a02</ExcludePdo>
+						<Entry Name="Value" Index="#x6010" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Standard Channel 3" Index="#x1a04" Flags="#x0010" SyncMan="3">
+						<ExcludePdo>#x1a05</ExcludePdo>
+						<Entry Name="Status__Underrange" Index="#x6020" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6020" Sub="#x02">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6020" Sub="#x03">
+							<Type>BIT2</Type>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6020" Sub="#x05">
+							<Type>BIT2</Type>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6020" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Gap">
+							<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Gap">
+							<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Sync error" Index="#x1c33" Sub="#x20">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x1804" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1804" Sub="#x09">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Value" Index="#x6020" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Compact Channel 3" Index="#x1a05" Flags="#x0010">
+						<ExcludePdo>#x1a04</ExcludePdo>
+						<Entry Name="Value" Index="#x6020" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Standard Channel 4" Index="#x1a06" Flags="#x0010" SyncMan="3">
+						<ExcludePdo>#x1a07</ExcludePdo>
+						<Entry Name="Status__Underrange" Index="#x6030" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6030" Sub="#x02">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6030" Sub="#x03">
+							<Type>BIT2</Type>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6030" Sub="#x05">
+							<Type>BIT2</Type>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6030" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Gap">
+							<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Gap">
+							<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Sync error" Index="#x1c33" Sub="#x20">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x1806" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1806" Sub="#x09">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Value" Index="#x6030" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Compact Channel 4" Index="#x1a07" Flags="#x0010">
+						<ExcludePdo>#x1a06</ExcludePdo>
+						<Entry Name="Value" Index="#x6030" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Standard Channel 5" Index="#x1a08" Flags="#x0010" SyncMan="3">
+						<ExcludePdo>#x1a09</ExcludePdo>
+						<Entry Name="Status__Underrange" Index="#x6040" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6040" Sub="#x02">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6040" Sub="#x03">
+							<Type>BIT2</Type>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6040" Sub="#x05">
+							<Type>BIT2</Type>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6040" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__Gap">
+							<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Gap">
+							<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Sync error" Index="#x1c33" Sub="#x20">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x1808" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1808" Sub="#x09">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Value" Index="#x6040" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Compact Channel 5" Index="#x1a09" Flags="#x0010">
+						<ExcludePdo>#x1a08</ExcludePdo>
+						<Entry Name="Value" Index="#x6040" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<CoeProfile ProfileNo="19665801"/>
+					<CoeProfile ProfileNo="19665801"/>
+					<CoeProfile ProfileNo="19665801"/>
+					<CoeProfile ProfileNo="19665801"/>
+					<CoeProfile ProfileNo="19665801"/>
+				</EtherCAT>
+			</Box>
+			<Box Id="6" BoxType="9099" BoxFlags="#x00000020">
+				<Name>Term 6 (EL3104)</Name>
+				<ImageId>1001</ImageId>
+				<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x0c203052" RevisionNo="#x00100000" InfoDataAddr="true" TimeoutMailbox2="2000" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL3104 4Ch. Ana. Input +/-10V Diff." Desc="EL3104" PortABoxInfo="#x01000005">
+					<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
+					<SyncMan>801080002200010002000000800080008000801022010000</SyncMan>
+					<SyncMan>001100000400000003000000000000000000001104000000</SyncMan>
+					<SyncMan>801110002000010004000000000000001000801120010000</SyncMan>
+					<Fmmu>0000000000000000801100010100000002000000000000000000000000000000</Fmmu>
+					<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+					<BootStrapData>0010f400f410f400</BootStrapData>
+					<DcMode>53796e6368726f6e00000000000000004672656552756e2f534d2d53796e6368726f6e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DcMode>
+					<DcMode>444353594e430000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000088130000000000070100000000000000000000000000000000000000000000000000000000000000</DcMode>
+					<DcMode>4443494e00000000000000000000000044432d53796e6368726f6e2028696e7075742062617365642900000000000000000000000000000088130000000000070100000000000000000001000000000000000000000000000000000000000000</DcMode>
+					<Pdo Name="AI Standard Channel 1" Index="#x1a00" Flags="#x0010" SyncMan="3">
+						<ExcludePdo>#x1a01</ExcludePdo>
+						<Entry Name="Status__Underrange" Index="#x6000" Sub="#x01">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when upper value limit exceeded]]></Comment>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6000" Sub="#x02">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when lower value limit exceeded]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6000" Sub="#x03">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value greater than Limit1
+Bit1: Value smaller than Limit1]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6000" Sub="#x05">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value greater than Limit2
+Bit1: Value smaller than Limit2]]></Comment>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6000" Sub="#x07">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when Over- or Underrange]]></Comment>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Sync error" Index="#x1c32" Sub="#x20">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x1800" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1800" Sub="#x09">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Value" Index="#x6000" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Compact Channel 1" Index="#x1a01" Flags="#x0010">
+						<ExcludePdo>#x1a00</ExcludePdo>
+						<Entry Name="Value" Index="#x6000" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Standard Channel 2" Index="#x1a02" Flags="#x0010" SyncMan="3">
+						<ExcludePdo>#x1a03</ExcludePdo>
+						<Entry Name="Status__Underrange" Index="#x6010" Sub="#x01">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when upper value limit exceeded]]></Comment>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6010" Sub="#x02">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when lower value limit exceeded]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6010" Sub="#x03">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value greater than Limit1
+Bit1: Value smaller than Limit1]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6010" Sub="#x05">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value greater than Limit2
+Bit1: Value smaller than Limit2]]></Comment>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6010" Sub="#x07">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when Over- or Underrange]]></Comment>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Sync error" Index="#x1c32" Sub="#x20">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x1802" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1802" Sub="#x09">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Value" Index="#x6010" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Compact Channel 2" Index="#x1a03" Flags="#x0010">
+						<ExcludePdo>#x1a02</ExcludePdo>
+						<Entry Name="Value" Index="#x6010" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Standard Channel 3" Index="#x1a04" Flags="#x0010" SyncMan="3">
+						<ExcludePdo>#x1a05</ExcludePdo>
+						<Entry Name="Status__Underrange" Index="#x6020" Sub="#x01">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when upper value limit exceeded]]></Comment>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6020" Sub="#x02">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when lower value limit exceeded]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6020" Sub="#x03">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value greater than Limit1
+Bit1: Value smaller than Limit1]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6020" Sub="#x05">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value greater than Limit2
+Bit1: Value smaller than Limit2]]></Comment>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6020" Sub="#x07">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when Over- or Underrange]]></Comment>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Sync error" Index="#x1c32" Sub="#x20">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x1804" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1804" Sub="#x09">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Value" Index="#x6020" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Compact Channel 3" Index="#x1a05" Flags="#x0010">
+						<ExcludePdo>#x1a04</ExcludePdo>
+						<Entry Name="Value" Index="#x6020" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Standard Channel 4" Index="#x1a06" Flags="#x0010" SyncMan="3">
+						<ExcludePdo>#x1a07</ExcludePdo>
+						<Entry Name="Status__Underrange" Index="#x6030" Sub="#x01">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when upper value limit exceeded]]></Comment>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6030" Sub="#x02">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when lower value limit exceeded]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6030" Sub="#x03">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value greater than Limit1
+Bit1: Value smaller than Limit1]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6030" Sub="#x05">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value greater than Limit2
+Bit1: Value smaller than Limit2]]></Comment>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6030" Sub="#x07">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when Over- or Underrange]]></Comment>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__Sync error" Index="#x1c32" Sub="#x20">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x1806" Sub="#x07">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1806" Sub="#x09">
+							<Type>BIT</Type>
+						</Entry>
+						<Entry Name="Value" Index="#x6030" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="AI Compact Channel 4" Index="#x1a07" Flags="#x0010">
+						<ExcludePdo>#x1a06</ExcludePdo>
+						<Entry Name="Value" Index="#x6030" Sub="#x11" Flags="#x00010000">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<CoeProfile ProfileNo="19665801"/>
+					<CoeProfile ProfileNo="19665801"/>
+					<CoeProfile ProfileNo="19665801"/>
+					<CoeProfile ProfileNo="19665801"/>
+				</EtherCAT>
+			</Box>
+			<Box Id="7" BoxType="9099" BoxFlags="#x00000020">
+				<Name>Term 7 (EL3314)</Name>
+				<ImageId>1001</ImageId>
+				<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x0cf23052" RevisionNo="#x00120000" InfoDataAddr="true" TimeoutMailbox2="2000" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL3314 4Ch. Ana. Input Thermocouple (TC)" Desc="EL3314" PortABoxInfo="#x01000006">
+					<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
+					<SyncMan>801080002200010002000000800080008000801022010000</SyncMan>
+					<SyncMan>001100002400000003000000000000000000001124000000</SyncMan>
+					<SyncMan>801110002000010004000000000000001000801120010000</SyncMan>
+					<Fmmu>0000000000000000000000020000000001000000000000000000000000000000</Fmmu>
+					<Fmmu>0000000000000000801100010100000002000000000000000000000000000000</Fmmu>
+					<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+					<BootStrapData>0010f400f410f400</BootStrapData>
+					<DcMode>4672656552756e0000000000000000004672656552756e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DcMode>
+					<Pdo Name="TC Inputs Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="3">
+						<Entry Name="Status__Underrange" Index="#x6000" Sub="#x01">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Underrange event active]]></Comment>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6000" Sub="#x02">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Overrange event active]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6000" Sub="#x03">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value smaller/equal Limit1
+Bit1: Value bigger/equal Limit1]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6000" Sub="#x05">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value smaller/equal Limit2
+Bit1: Value bigger/equal Limit2]]></Comment>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6000" Sub="#x07">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when Over- or Underrange]]></Comment>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x6000" Sub="#x0f">
+							<Type>BIT</Type>
+							<Comment><![CDATA[TRUE when this TxPDO is not valid]]></Comment>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1800" Sub="#x09">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit toggles everytime when new value available]]></Comment>
+						</Entry>
+						<Entry Name="Value" Index="#x6000" Sub="#x11">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="TC Inputs Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="3">
+						<Entry Name="Status__Underrange" Index="#x6010" Sub="#x01">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Underrange event active]]></Comment>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6010" Sub="#x02">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Overrange event active]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6010" Sub="#x03">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value smaller/equal Limit1
+Bit1: Value bigger/equal Limit1]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6010" Sub="#x05">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value smaller/equal Limit2
+Bit1: Value bigger/equal Limit2]]></Comment>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6010" Sub="#x07">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when Over- or Underrange]]></Comment>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x6010" Sub="#x0f">
+							<Type>BIT</Type>
+							<Comment><![CDATA[TRUE when this TxPDO is not valid]]></Comment>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1801" Sub="#x09">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit toggles everytime when new value available]]></Comment>
+						</Entry>
+						<Entry Name="Value" Index="#x6010" Sub="#x11">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="TC Inputs Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="3">
+						<Entry Name="Status__Underrange" Index="#x6020" Sub="#x01">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Underrange event active]]></Comment>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6020" Sub="#x02">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Overrange event active]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6020" Sub="#x03">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value smaller/equal Limit1
+Bit1: Value bigger/equal Limit1]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6020" Sub="#x05">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value smaller/equal Limit2
+Bit1: Value bigger/equal Limit2]]></Comment>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6020" Sub="#x07">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when Over- or Underrange]]></Comment>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x6020" Sub="#x0f">
+							<Type>BIT</Type>
+							<Comment><![CDATA[TRUE when this TxPDO is not valid]]></Comment>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1802" Sub="#x09">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit toggles everytime when new value available]]></Comment>
+						</Entry>
+						<Entry Name="Value" Index="#x6020" Sub="#x11">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="TC Inputs Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="3">
+						<Entry Name="Status__Underrange" Index="#x6030" Sub="#x01">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Underrange event active]]></Comment>
+						</Entry>
+						<Entry Name="Status__Overrange" Index="#x6030" Sub="#x02">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Overrange event active]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 1" Index="#x6030" Sub="#x03">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value smaller/equal Limit1
+Bit1: Value bigger/equal Limit1]]></Comment>
+						</Entry>
+						<Entry Name="Status__Limit 2" Index="#x6030" Sub="#x05">
+							<Type>BIT2</Type>
+							<Comment><![CDATA[Bit0: Value smaller/equal Limit2
+Bit1: Value bigger/equal Limit2]]></Comment>
+						</Entry>
+						<Entry Name="Status__Error" Index="#x6030" Sub="#x07">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit set when Over- or Underrange]]></Comment>
+						</Entry>
+						<Entry Name="Status__">
+							<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
+						</Entry>
+						<Entry Name="Status__TxPDO State" Index="#x6030" Sub="#x0f">
+							<Type>BIT</Type>
+							<Comment><![CDATA[TRUE when this TxPDO is not valid]]></Comment>
+						</Entry>
+						<Entry Name="Status__TxPDO Toggle" Index="#x1803" Sub="#x09">
+							<Type>BIT</Type>
+							<Comment><![CDATA[Bit toggles everytime when new value available]]></Comment>
+						</Entry>
+						<Entry Name="Value" Index="#x6030" Sub="#x11">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="TC Outputs Channel 1" Index="#x1600" InOut="1" Flags="#x0010">
+						<Entry Name="CJCompensation" Index="#x7000" Sub="#x11">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="TC Outputs Channel 2" Index="#x1601" InOut="1" Flags="#x0010">
+						<Entry Name="CJCompensation" Index="#x7010" Sub="#x11">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="TC Outputs Channel 3" Index="#x1602" InOut="1" Flags="#x0010">
+						<Entry Name="CJCompensation" Index="#x7020" Sub="#x11">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="TC Outputs Channel 4" Index="#x1603" InOut="1" Flags="#x0010">
+						<Entry Name="CJCompensation" Index="#x7030" Sub="#x11">
+							<Type>INT</Type>
+						</Entry>
+					</Pdo>
+					<CoeProfile ProfileNo="19665801"/>
+					<CoeProfile ProfileNo="19665801"/>
+					<CoeProfile ProfileNo="19665801"/>
+					<CoeProfile ProfileNo="19665801"/>
+				</EtherCAT>
+			</Box>
+			<Box Id="8" BoxType="9099">
+				<Name>Term 8 (EL2004)</Name>
+				<ImageId>1002</ImageId>
+				<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x07d43052" RevisionNo="#x00100000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL2004 4Ch. Dig. Output 24V, 0.5A" Desc="EL2004" PortABoxInfo="#x01000007">
+					<SyncMan>000f01004400010003000000000000000000000f44090000</SyncMan>
+					<Fmmu>0000000000000000000f00020100000001000000000000000000000000000000</Fmmu>
+					<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
+						<Entry Name="Output" Index="#x7000" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 2" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
+						<Entry Name="Output" Index="#x7010" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 3" Index="#x1602" InOut="1" Flags="#x0011" SyncMan="0">
+						<Entry Name="Output" Index="#x7020" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+					<Pdo Name="Channel 4" Index="#x1603" InOut="1" Flags="#x0011" SyncMan="0">
+						<Entry Name="Output" Index="#x7030" Sub="#x01">
+							<Type>BIT</Type>
+						</Entry>
+					</Pdo>
+				</EtherCAT>
+			</Box>
+			<Box Id="9" BoxType="9099">
+				<Name>Term 9 (EK1521)</Name>
+				<ImageId>1003</ImageId>
+				<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x05f12c52" RevisionNo="#x00120000" PortPhys="4867" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1521 1 port EtherCAT junction (FX-MultiMode)" Desc="EK1521" PortABoxInfo="#x01000008"/>
+			</Box>
+			<Box Id="10" BoxType="9099">
+				<Name>Term 10 (EK1110)</Name>
+				<ImageId>1004</ImageId>
+				<EtherCAT SlaveType="1" PdiType="#x0100" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04562c52" RevisionNo="#x00100000" PortPhys="19" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1110 EtherCAT extension" Desc="EK1110" PortABoxInfo="#x02000009"/>
+			</Box>
+		</Box>
+		<Box Id="18" BoxType="9099" BoxFlags="#x00000020">
+			<Name>Drive 30 (AX5203-0000-0011)</Name>
+			<ImageId>1005</ImageId>
+			<Xml>
+				<AX5XXXDriveTool>
+					<AxisSettings>
+						<AxisSetting Channel="0">
+							<Property>
+								<Name>Feedback1Connector0</Name>
+								<Value>0</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Connector1</Name>
+								<Value>4</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Connector2</Name>
+								<Value>4</Value>
+							</Property>
+							<Property>
+								<Name>MotorType</Name>
+								<Value>AM237L-0000</Value>
+							</Property>
+							<Property>
+								<Name>MotorDataVersion</Name>
+								<Value>2.0.0</Value>
+							</Property>
+							<Property>
+								<Name>MotorApplication</Name>
+								<Value>TuningRequired</Value>
+							</Property>
+							<Property>
+								<Name>MotorDataLocation</Name>
+								<Value>C:\TwinCAT\Io\TcDriveManager\MotorPool\BECKHOFF AM2xxx TuningRequired.xml</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Type</Name>
+								<Value>Resolver#p2f8kHzn0.5phi0deg</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1DataVersion</Name>
+								<Value>2.0.21</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Application</Name>
+								<Value>Default</Value>
+							</Property>
+							<Property>
+								<Name>SelectedConstraintsID</Name>
+								<Value>1</Value>
+							</Property>
+						</AxisSetting>
+						<AxisSetting Channel="1">
+							<Property>
+								<Name>SelectedConstraintsID</Name>
+								<Value>1</Value>
+							</Property>
+							<Property>
+								<Name>MotorType</Name>
+								<Value>AM237L-0000</Value>
+							</Property>
+							<Property>
+								<Name>MotorDataVersion</Name>
+								<Value>2.0.0</Value>
+							</Property>
+							<Property>
+								<Name>MotorApplication</Name>
+								<Value>TuningRequired</Value>
+							</Property>
+							<Property>
+								<Name>MotorDataLocation</Name>
+								<Value>C:\TwinCAT\Io\TcDriveManager\MotorPool\BECKHOFF AM2xxx TuningRequired.xml</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Type</Name>
+								<Value>Resolver#p2f8kHzn0.5phi0deg</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1DataVersion</Name>
+								<Value>2.0.21</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Application</Name>
+								<Value>Default</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Connector0</Name>
+								<Value>0</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Connector1</Name>
+								<Value>6</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Connector2</Name>
+								<Value>6</Value>
+							</Property>
+						</AxisSetting>
+					</AxisSettings>
+					<InitCmds>
+						<InitCmd DriveNo="0" IDN="30" MotorDataLevel="0" DisableMode="0">
+							<RetainData>3e0042004669726d776172653a2076312e303620284275696c64203030313829202f20426f6f746c6f616465723a2076312e303220284275696c6420303030312900</RetainData>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="91" MotorDataLevel="2" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="91" MotorDataLevel="2" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="100" MotorDataLevel="2" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="100" MotorDataLevel="2" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="101" MotorDataLevel="2" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="101" MotorDataLevel="2" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="106" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="106" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="107" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="107" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="109" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="109" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="111" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="111" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="113" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="113" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="136" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="136" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="137" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="137" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="201" MotorDataLevel="2" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="201" MotorDataLevel="2" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="204" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="204" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="432" MotorDataLevel="0" DisableMode="0">
+							<RetainData>1200160053657269616c233a20303030303437373830</RetainData>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32770" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32770" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32771" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32771" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32772" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32772" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32818" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32818" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32819" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32819" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32821" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32821" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32822" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32822" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32823" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32823" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32824" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32824" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32825" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32825" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32829" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32829" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32830" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32830" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32834" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32834" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32836" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32836" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32838" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32838" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32839" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32839" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32857" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32857" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32860" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32860" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32861" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32861" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32918" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32918" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32920" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32920" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32921" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="32921" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="32984" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="33088" MotorDataLevel="0" DisableMode="0">
+							<RetainData>100010006a00120066000100ec0c3d00ec0c3d00</RetainData>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33093" MotorDataLevel="0" DisableMode="0">
+							<RetainData>16001a004a616e2031322032303131202c2031313a33353a3531</RetainData>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33219" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="33219" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="0" IDN="33279" MotorDataLevel="1" DisableMode="0"/>
+						<InitCmd DriveNo="1" IDN="33279" MotorDataLevel="1" DisableMode="0"/>
+					</InitCmds>
+					<StatusBar>
+						<Element option="0" SortOder="0" SubIdx="0">
+							<Index>135</Index>
+						</Element>
+						<Element option="0" SortOder="0" SubIdx="0">
+							<Index>390</Index>
+							<Width>85</Width>
+						</Element>
+						<Element option="0" SortOder="0" SubIdx="0">
+							<Index>95</Index>
+							<Width>100</Width>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>32821</Index>
+						</Element>
+						<Element option="0" SortOder="0" SubIdx="0">
+							<Index>32973</Index>
+							<SubItem>Bit0</SubItem>
+						</Element>
+						<Element option="0" SortOder="0" SubIdx="0">
+							<Index>32973</Index>
+							<SubItem>Bit3</SubItem>
+						</Element>
+						<Element option="0" SortOder="0" SubIdx="0">
+							<Index>384</Index>
+						</Element>
+						<Element option="0" SortOder="0" SubIdx="0">
+							<Index>135</Index>
+							<SubItem>ActualOperationMode</SubItem>
+							<Width>125</Width>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33080</Index>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>32865</Index>
+							<SubItem>MotorBrakeUnlocked</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>380</Index>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>381</Index>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>32831</Index>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33221</Index>
+							<SubItem>Active</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33221</Index>
+							<SubItem>ReadyToEnable</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33221</Index>
+							<SubItem>IGreaterThanInom</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33221</Index>
+							<SubItem>IPeakLimitReached</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33221</Index>
+							<SubItem>IreductionActive</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33221</Index>
+							<SubItem>UmaxReached</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33221</Index>
+							<SubItem>FieldWeakeningActive</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33271</Index>
+							<SubItem>Active</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33271</Index>
+							<SubItem>ReadyToEnable</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33271</Index>
+							<SubItem>PosDirectionEnabled</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33271</Index>
+							<SubItem>NegDirectionEnabled</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33271</Index>
+							<SubItem>AccDecLimitationActive</SubItem>
+						</Element>
+						<Element option="1" SortOder="0" SubIdx="0">
+							<Index>33271</Index>
+							<SubItem>vLimitationActive</SubItem>
+						</Element>
+						<Element option="0" SortOder="0" SubIdx="0">
+							<Index>33271</Index>
+							<SubItem>vZeroReached</SubItem>
+						</Element>
+						<Element option="0" SortOder="0" SubIdx="0">
+							<Index>33271</Index>
+							<SubItem>CmdMovPositive</SubItem>
+						</Element>
+						<Element option="0" SortOder="0" SubIdx="0">
+							<Index>33271</Index>
+							<SubItem>CmdMovNegative</SubItem>
+						</Element>
+						<Element option="0" SortOder="0" SubIdx="0">
+							<Index>32983</Index>
+							<Width>131</Width>
+						</Element>
+					</StatusBar>
+				</AX5XXXDriveTool>
+			</Xml>
+			<EtherCAT SlaveType="2" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CfgModeSafeOp="true" DcInfoAvailable="true" DownloadPdoCfg="true" CycleMBoxPollingTime="0" FoeType="1" SoeChannels="2" VendorId="#x00000002" ProductCode="#x14536012" RevisionNo="#x000b0000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" AutoRestoreAfterWcOk="true" CheckRevisionNoType="4" PortPhys="17" Type="AX5203-0000 EtherCAT Drive (SoE, 2 Ch.)" Desc="AX5203-0000-0011" PortABoxInfo="#x0100000a">
+				<SyncMan>001880002600010001000000800080008000001826010000</SyncMan>
+				<SyncMan>001a80002200010002000000800080008000001a22010000</SyncMan>
+				<SyncMan>001010002400010003000000000000000000001024010000</SyncMan>
+				<SyncMan>001110002200010004000000000000000000001122010000</SyncMan>
+				<Fmmu>0000000000000000001000020100000001000000000000000000000000000000</Fmmu>
+				<Fmmu>0000000000000000001100010100000002000000000000000000000000000000</Fmmu>
+				<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+				<BootStrapData>0010140200181402</BootStrapData>
+				<DcData>3007000090d0030050c30000000000000000ffff000000000000000000000000</DcData>
+				<DcMode>446353796e633235300000000000000053796e63206379636c652074696d653a20323530b5730000000000000000000090d0030050c3000000000000ffff30070000000000000000000000000000000000000000000000000000000000000000</DcMode>
+				<DcMode>446353796e633132350000000000000053796e63206379636c652074696d653a20313235b5730000000000000000000048e80100a861000000000000ffff30070000000000000000000000000000000000000000000000000000000000000000</DcMode>
+				<MBoxUserCmdData>020005000a0000001500000000000000000000000000000000000000000000000340010000000000d007546e637963202d204e43206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001700000000000000000000000000000000000000000000000340020000000000d0075473637963202d20436f6d6d206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000000e0000000000000000000000000000000000000000000000034020000000000002004f7065726174696f6e206d6f646500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000000e0000000000000000000000000000000000000000000000234020000000000002004f7065726174696f6e206d6f646500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d00000000000000000000000000000000000000000000000340cc80000000000100506f776572204d616e6167656d656e7420636f6e74726f6c20776f726400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001400000000000000000000000000000000000000000000000340c98000000000a00f4e6f6d696e616c206d61696e20766f6c7461676500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002500000000000000000000000000000000000000000000000340ca800000000064004d61696e20766f6c7461676520706f73697469766520746f6c6572616e63652072616e676500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002500000000000000000000000000000000000000000000000340cb800000000064004d61696e20766f6c74616765206e6567617469766520746f6c6572616e63652072616e676500</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500480000002800000000000000000000000000000000000000000000000340a580000000003c003c000000000000000000f401b80b0000000000000000f4016400f401f40104000500e1009600b80b84030000000000000000000000000000000000000000436f6d6d75746174696f6e206f66667365742063616c6962726174696f6e20706172616d6574657200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001c0000001500000000000000000000000000000000000000000000002340368000000000100022004158353230332d303030302d23232323436f6e66696775726564206472697665207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001800000015000000000000000000000000000000000000000000000023403580000000000c002200414d3233374c2d3030303000436f6e66696775726564206d6f746f72207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000170000000000000000000000000000000000000000000000234032800000000000004d6f746f7220636f6e737472756374696f6e207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000021000000000000000000000000000000000000000000000023408800000000005e960900506f73697469766520616363656c65726174696f6e206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000021000000000000000000000000000000000000000000000023408900000000005e9609004e6567617469766520616363656c65726174696f6e206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001b00000000000000000000000000000000000000000000002340c38100000000000043757272656e7420636f6e74726f6c6c65722073657474696e677300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001300000000000000000000000000000000000000000000002340710000000000941100004d6178696d756d206d6f746f7220737065656400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000140000000000000000000000000000000000000000000000234033800000000003004e756d626572206f6620706f6c6520706169727300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000090000000000000000000000000000000000000000000000234037800000000044024d6f746f7220454d4600</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d0000000000000000000000000000000000000000000000234046800000000096004d6f746f7220636f6e74696e756f7573207374616c6c20746f7271756500</MBoxUserCmdData>
+				<MBoxUserCmdData>0200050010000000150000000000000000000000000000000000000000000000234047800000000004000400640000004d656368616e6963616c206d6f746f72206461746100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000012000000000000000000000000000000000000000000000023406d0000000000001900004d6f746f72207065616b2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001e000000000000000000000000000000000000000000000023406f0000000000400600004d6f746f7220636f6e74696e756f7573207374616c6c2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500140000001400000000000000000000000000000000000000000000002340428000000000080008000e060000b80b0000456c656374726963206d6f746f72206d6f64656c00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001900000000000000000000000000000000000000000000002340c9000000000020034d6f746f72207761726e696e672074656d706572617475726500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001b00000000000000000000000000000000000000000000002340cc000000000078054d6f746f72207368757420646f776e2074656d706572617475726500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d000000000000000000000000000000000000000000000023403980000000007869456c656374726963616c20636f6d6d75746174696f6e206f666673657400</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500480000002800000000000000000000000000000000000000000000002340a580000000003c003c000000000000000000f401b80b0000000000000000f4016400f401f40104000500e1009600b80b84030000000000000000000000000000000000000000436f6d6d75746174696f6e206f66667365742063616c6962726174696f6e20706172616d6574657200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001400000013000000000000000000000000000000000000000000000023403e8000000000080008008403500064000100546865726d616c206d6f746f72206d6f64656c00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001000000027000000000000000000000000000000000000000000000023404480000000000400040064006400546865726d616c206f7665726c6f616420666163746f7220286d6f746f722077696e64696e672900</MBoxUserCmdData>
+				<MBoxUserCmdData>0200050030000000160000000000000000000000000000000000000000000000234059800000000024002400028000003e0000003e000000c980000006090000a00f00000000000000000000000000004d6f746f72206461746120636f6e73747261696e747300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000017000000000000000000000000000000000000000000000023400280000000003e0043757272656e74206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001a000000000000000000000000000000000000000000000023405d800000000040060000436f6e66696775726564206368616e6e656c2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f000000000000000000000000000000000000000000000023405c8000000000800c0000436f6e66696775726564206368616e6e656c207065616b2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000020000000000000000000000000000000000000000000000023406a0000000000590343757272656e74206c6f6f702070726f706f7274696f6e616c206761696e203100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002b000000000000000000000000000000000000000000000023406b0000000000070043757272656e7420636f6e74726f6c206c6f6f7020696e74656772616c20616374696f6e2074696d65203100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f00000000000000000000000000000000000000000000002340640000000000e204000056656c6f63697479206c6f6f702070726f706f7274696f6e616c206761696e00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002200000000000000000000000000000000000000000000002340650000000000200056656c6f63697479206c6f6f7020696e74656772616c20616374696f6e2074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f00000000000000000000000000000000000000000000002340388000000000031000004d6178206d6f746f722073706565642077697468206d617820746f7271756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001c000000000000000000000000000000000000000000000023405b00000000002bc9cc044269706f6c61722076656c6f63697479206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d000000000000000000000000000000000000000000000023403d800000000002004d6f746f722074656d70657261747572652073656e736f72207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c000000190000000000000000000000000000000000000000000000234098800000000001000000466565646261636b20312067656172206e756d657261746f7200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001b0000000000000000000000000000000000000000000000234099800000000001000000466565646261636b203120676561722064656e6f6d696e61746f7200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000018000000000000000000000000000000000000000000000023400380000000007d0056656c6f63697479206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002600000000000000000000000000000000000000000000002340ff8100000000960056656c6f636974792066696c746572206c6f7720706173732074696d6520636f6e7374616e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001800000000000000000000000000000000000000000000002340048000000000fa00506f736974696f6e206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500ec0000000f00000000000000000000000000000000000000000000002340968000000000e000e000000000005265736f6c76657223703266386b487a6e302e35706869306465670000000000000000000000000000000000060000000000000003000600000000000300020832000000102700007e04ee02f401e80300000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a6004a019b0000000000000000000000000000000000000000000000466565646261636b2031207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001c0000001500000000000000000000000000000000000000000000000340368000000000100022004158353230332d303030302d23232323436f6e66696775726564206472697665207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001800000015000000000000000000000000000000000000000000000003403580000000000c002200414d3233374c2d3030303000436f6e66696775726564206d6f746f72207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000170000000000000000000000000000000000000000000000034032800000000000004d6f746f7220636f6e737472756374696f6e207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001300000000000000000000000000000000000000000000000340d88000000000c4224d6178204443204c696e6b20766f6c7461676500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000021000000000000000000000000000000000000000000000003408800000000005e960900506f73697469766520616363656c65726174696f6e206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000021000000000000000000000000000000000000000000000003408900000000005e9609004e6567617469766520616363656c65726174696f6e206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001b00000000000000000000000000000000000000000000000340c38100000000000043757272656e7420636f6e74726f6c6c65722073657474696e677300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001300000000000000000000000000000000000000000000000340710000000000941100004d6178696d756d206d6f746f7220737065656400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000140000000000000000000000000000000000000000000000034033800000000003004e756d626572206f6620706f6c6520706169727300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000090000000000000000000000000000000000000000000000034037800000000044024d6f746f7220454d4600</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d0000000000000000000000000000000000000000000000034046800000000096004d6f746f7220636f6e74696e756f7573207374616c6c20746f7271756500</MBoxUserCmdData>
+				<MBoxUserCmdData>0200050010000000150000000000000000000000000000000000000000000000034047800000000004000400640000004d656368616e6963616c206d6f746f72206461746100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000012000000000000000000000000000000000000000000000003406d0000000000001900004d6f746f72207065616b2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001e000000000000000000000000000000000000000000000003406f0000000000400600004d6f746f7220636f6e74696e756f7573207374616c6c2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500140000001400000000000000000000000000000000000000000000000340428000000000080008000e060000b80b0000456c656374726963206d6f746f72206d6f64656c00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001900000000000000000000000000000000000000000000000340c9000000000020034d6f746f72207761726e696e672074656d706572617475726500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001b00000000000000000000000000000000000000000000000340cc000000000078054d6f746f72207368757420646f776e2074656d706572617475726500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d000000000000000000000000000000000000000000000003403980000000007869456c656374726963616c20636f6d6d75746174696f6e206f666673657400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001400000013000000000000000000000000000000000000000000000003403e8000000000080008008403500064000100546865726d616c206d6f746f72206d6f64656c00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001000000027000000000000000000000000000000000000000000000003404480000000000400040064006400546865726d616c206f7665726c6f616420666163746f7220286d6f746f722077696e64696e672900</MBoxUserCmdData>
+				<MBoxUserCmdData>0200050030000000160000000000000000000000000000000000000000000000034059800000000024002400028000003e0000003e000000c980000006090000a00f00000000000000000000000000004d6f746f72206461746120636f6e73747261696e747300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000017000000000000000000000000000000000000000000000003400280000000003e0043757272656e74206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001a000000000000000000000000000000000000000000000003405d800000000040060000436f6e66696775726564206368616e6e656c2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f000000000000000000000000000000000000000000000003405c8000000000800c0000436f6e66696775726564206368616e6e656c207065616b2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000020000000000000000000000000000000000000000000000003406a0000000000590343757272656e74206c6f6f702070726f706f7274696f6e616c206761696e203100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002b000000000000000000000000000000000000000000000003406b0000000000070043757272656e7420636f6e74726f6c206c6f6f7020696e74656772616c20616374696f6e2074696d65203100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f00000000000000000000000000000000000000000000000340640000000000e204000056656c6f63697479206c6f6f702070726f706f7274696f6e616c206761696e00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002200000000000000000000000000000000000000000000000340650000000000200056656c6f63697479206c6f6f7020696e74656772616c20616374696f6e2074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f00000000000000000000000000000000000000000000000340388000000000031000004d6178206d6f746f722073706565642077697468206d617820746f7271756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001c000000000000000000000000000000000000000000000003405b00000000002bc9cc044269706f6c61722076656c6f63697479206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d000000000000000000000000000000000000000000000003403d800000000002004d6f746f722074656d70657261747572652073656e736f72207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c000000190000000000000000000000000000000000000000000000034098800000000001000000466565646261636b20312067656172206e756d657261746f7200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001b0000000000000000000000000000000000000000000000034099800000000001000000466565646261636b203120676561722064656e6f6d696e61746f7200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000018000000000000000000000000000000000000000000000003400380000000007d0056656c6f63697479206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002600000000000000000000000000000000000000000000000340ff8100000000960056656c6f636974792066696c746572206c6f7720706173732074696d6520636f6e7374616e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001800000000000000000000000000000000000000000000000340048000000000fa00506f736974696f6e206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500ec0000000f00000000000000000000000000000000000000000000000340968000000000e000e000000000005265736f6c76657223703266386b487a6e302e35706869306465670000000000000000000000000000000000040000000000000003000400000000000300020832000000102700007e04ee02f401e80300000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a6004a019b0000000000000000000000000000000000000000000000466565646261636b2031207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500140000001b00000000000000000000000000000000000000000000002340b88000000000080008000000000000000000466565646261636b2032207265666572656e6365207369676e616c00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000140000000000000000000000000000000000000000000000034030810000000001004c6f67676572206d657373616765206c6576656c00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000140000000000000000000000000000000000000000000000234030810000000001004c6f67676572206d657373616765206c6576656c00</MBoxUserCmdData>
+				<Pdo Name="AT 1" Index="#x0010" Flags="#x0001" SyncMan="3">
+					<Entry Name="Drive status word" Index="#x0087" Flags="#x00000800">
+						<Type>UINT</Type>
+					</Entry>
+					<Entry Name="Position feedback 1 value" Index="#x0033">
+						<Type>DINT</Type>
+					</Entry>
+					<Entry Name="Torque feedback value" Index="#x0054">
+						<Type>INT</Type>
+					</Entry>
+				</Pdo>
+				<Pdo Name="AT 2" Index="#x1010" Flags="#x0001" SyncMan="3">
+					<Entry Name="Drive status word" Index="#x0087" Flags="#x00000800">
+						<Type>UINT</Type>
+					</Entry>
+					<Entry Name="Position feedback 1 value" Index="#x0033">
+						<Type>DINT</Type>
+					</Entry>
+					<Entry Name="Torque feedback value" Index="#x0054">
+						<Type>INT</Type>
+					</Entry>
+				</Pdo>
+				<Pdo Name="MDT 1" Index="#x0018" InOut="1" Flags="#x0001" SyncMan="2">
+					<Entry Name="Master control word" Index="#x0086" Flags="#x00000800">
+						<Type>UINT</Type>
+					</Entry>
+					<Entry Name="Velocity command value" Index="#x0024">
+						<Type>DINT</Type>
+					</Entry>
+					<Entry Name="Bipolar torque limit value" Index="#x005c">
+						<Type>UINT</Type>
+					</Entry>
+				</Pdo>
+				<Pdo Name="MDT 2" Index="#x1018" InOut="1" Flags="#x0001" SyncMan="2">
+					<Entry Name="Master control word" Index="#x0086" Flags="#x00000800">
+						<Type>UINT</Type>
+					</Entry>
+					<Entry Name="Velocity command value" Index="#x0024">
+						<Type>DINT</Type>
+					</Entry>
+					<Entry Name="Bipolar torque limit value" Index="#x005c">
+						<Type>UINT</Type>
+					</Entry>
+				</Pdo>
+			</EtherCAT>
+		</Box>
+		<Box Id="19" BoxType="9099" BoxFlags="#x00000020">
+			<Name>Drive 31 (AX5203-0000-0011)</Name>
+			<ImageId>1005</ImageId>
+			<Xml>
+				<AX5XXXDriveTool>
+					<AxisSettings>
+						<AxisSetting Channel="0">
+							<Property>
+								<Name>Feedback1Connector0</Name>
+								<Value>0</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Connector1</Name>
+								<Value>4</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Connector2</Name>
+								<Value>4</Value>
+							</Property>
+							<Property>
+								<Name>MotorType</Name>
+								<Value>AM237L-0000</Value>
+							</Property>
+							<Property>
+								<Name>MotorDataVersion</Name>
+								<Value>2.0.0</Value>
+							</Property>
+							<Property>
+								<Name>MotorApplication</Name>
+								<Value>TuningRequired</Value>
+							</Property>
+							<Property>
+								<Name>MotorDataLocation</Name>
+								<Value>C:\TwinCAT\Io\TcDriveManager\MotorPool\BECKHOFF AM2xxx TuningRequired.xml</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Type</Name>
+								<Value>Resolver#p2f8kHzn0.5phi0deg</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1DataVersion</Name>
+								<Value>2.0.21</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Application</Name>
+								<Value>Default</Value>
+							</Property>
+							<Property>
+								<Name>SelectedConstraintsID</Name>
+								<Value>1</Value>
+							</Property>
+						</AxisSetting>
+						<AxisSetting Channel="1">
+							<Property>
+								<Name>SelectedConstraintsID</Name>
+								<Value>1</Value>
+							</Property>
+							<Property>
+								<Name>MotorType</Name>
+								<Value>AM237L-0000</Value>
+							</Property>
+							<Property>
+								<Name>MotorDataVersion</Name>
+								<Value>2.0.0</Value>
+							</Property>
+							<Property>
+								<Name>MotorApplication</Name>
+								<Value>TuningRequired</Value>
+							</Property>
+							<Property>
+								<Name>MotorDataLocation</Name>
+								<Value>C:\TwinCAT\Io\TcDriveManager\MotorPool\BECKHOFF AM2xxx TuningRequired.xml</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Type</Name>
+								<Value>Resolver#p2f8kHzn0.5phi0deg</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1DataVersion</Name>
+								<Value>2.0.21</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Application</Name>
+								<Value>Default</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Connector0</Name>
+								<Value>0</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Connector1</Name>
+								<Value>6</Value>
+							</Property>
+							<Property>
+								<Name>Feedback1Connector2</Name>
+								<Value>6</Value>
+							</Property>
+						</AxisSetting>
+					</AxisSettings>
+					<InitCmds>
+						<InitCmd DriveNo="0" IDN="1" MotorDataLevel="0" DisableMode="0">
+							<Data>d007</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="2" MotorDataLevel="0" DisableMode="0">
+							<Data>d007</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="7" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="7" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="15" MotorDataLevel="0" DisableMode="0">
+							<Data>0700</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="15" MotorDataLevel="0" DisableMode="0">
+							<Data>0700</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="16" MotorDataLevel="0" DisableMode="0">
+							<Data>020020003300</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="16" MotorDataLevel="0" DisableMode="0">
+							<Data>020020003300</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="24" MotorDataLevel="0" DisableMode="0">
+							<Data>020020002400</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="24" MotorDataLevel="0" DisableMode="0">
+							<Data>020020002400</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="30" MotorDataLevel="0" DisableMode="0">
+							<RetainData>3e0042004669726d776172653a2076312e303620284275696c64203030313829202f20426f6f746c6f616465723a2076312e303220284275696c6420303030312900</RetainData>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32" MotorDataLevel="0" DisableMode="0">
+							<Data>0200</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32" MotorDataLevel="0" DisableMode="0">
+							<Data>0200</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="34" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="34" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="35" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="35" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="43" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="43" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="55" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="55" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="82" MotorDataLevel="0" DisableMode="0">
+							<Data>e803</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="82" MotorDataLevel="0" DisableMode="0">
+							<Data>e803</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="83" MotorDataLevel="0" DisableMode="0">
+							<Data>e803</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="83" MotorDataLevel="0" DisableMode="0">
+							<Data>e803</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="85" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="85" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="91" MotorDataLevel="2" DisableMode="0">
+							<Data>2bc9cc04</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="91" MotorDataLevel="2" DisableMode="0">
+							<Data>2bc9cc04</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="92" MotorDataLevel="0" DisableMode="0">
+							<Data>e803</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="92" MotorDataLevel="0" DisableMode="0">
+							<Data>e803</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="100" MotorDataLevel="2" DisableMode="0">
+							<Data>e2040000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="100" MotorDataLevel="2" DisableMode="0">
+							<Data>e2040000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="101" MotorDataLevel="2" DisableMode="0">
+							<Data>2000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="101" MotorDataLevel="2" DisableMode="0">
+							<Data>2000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="104" MotorDataLevel="0" DisableMode="0">
+							<Data>6400</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="104" MotorDataLevel="0" DisableMode="0">
+							<Data>6400</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="106" MotorDataLevel="1" DisableMode="0">
+							<Data>5903</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="106" MotorDataLevel="1" DisableMode="0">
+							<Data>5903</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="107" MotorDataLevel="1" DisableMode="0">
+							<Data>0700</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="107" MotorDataLevel="1" DisableMode="0">
+							<Data>0700</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="109" MotorDataLevel="1" DisableMode="0">
+							<Data>00190000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="109" MotorDataLevel="1" DisableMode="0">
+							<Data>00190000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="111" MotorDataLevel="1" DisableMode="0">
+							<Data>40060000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="111" MotorDataLevel="1" DisableMode="0">
+							<Data>40060000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="113" MotorDataLevel="1" DisableMode="0">
+							<Data>94110000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="113" MotorDataLevel="1" DisableMode="0">
+							<Data>94110000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="124" MotorDataLevel="0" DisableMode="0">
+							<Data>865d0100</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="124" MotorDataLevel="0" DisableMode="0">
+							<Data>865d0100</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="136" MotorDataLevel="1" DisableMode="0">
+							<Data>5e960900</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="136" MotorDataLevel="1" DisableMode="0">
+							<Data>5e960900</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="137" MotorDataLevel="1" DisableMode="0">
+							<Data>5e960900</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="137" MotorDataLevel="1" DisableMode="0">
+							<Data>5e960900</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="159" MotorDataLevel="0" DisableMode="0">
+							<Data>88130000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="159" MotorDataLevel="0" DisableMode="0">
+							<Data>88130000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="169" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="169" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="201" MotorDataLevel="2" DisableMode="0">
+							<Data>2003</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="201" MotorDataLevel="2" DisableMode="0">
+							<Data>2003</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="204" MotorDataLevel="1" DisableMode="0">
+							<Data>7805</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="204" MotorDataLevel="1" DisableMode="0">
+							<Data>7805</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="206" MotorDataLevel="0" DisableMode="0">
+							<Data>6400</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="206" MotorDataLevel="0" DisableMode="0">
+							<Data>6400</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="207" MotorDataLevel="0" DisableMode="0">
+							<Data>9600</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="207" MotorDataLevel="0" DisableMode="0">
+							<Data>9600</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="273" MotorDataLevel="0" DisableMode="0">
+							<Data>10270000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="273" MotorDataLevel="0" DisableMode="0">
+							<Data>10270000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="295" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="295" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="296" MotorDataLevel="0" DisableMode="0">
+							<Data>1027</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="296" MotorDataLevel="0" DisableMode="0">
+							<Data>1027</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="301" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="301" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="303" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="303" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="305" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="305" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="307" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="307" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="372" MotorDataLevel="0" DisableMode="0">
+							<Data>5e960900</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="372" MotorDataLevel="0" DisableMode="0">
+							<Data>5e960900</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="432" MotorDataLevel="0" DisableMode="0">
+							<RetainData>1200160053657269616c233a20303030303437343839</RetainData>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="429" MotorDataLevel="0" DisableMode="0">
+							<Data>5e960900</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="429" MotorDataLevel="0" DisableMode="0">
+							<Data>5e960900</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32769" MotorDataLevel="0" DisableMode="0">
+							<Data>401f</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32769" MotorDataLevel="0" DisableMode="0">
+							<Data>401f</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32770" MotorDataLevel="1" DisableMode="0">
+							<Data>3e00</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32770" MotorDataLevel="1" DisableMode="0">
+							<Data>3e00</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32771" MotorDataLevel="1" DisableMode="0">
+							<Data>7d00</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32771" MotorDataLevel="1" DisableMode="0">
+							<Data>7d00</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32772" MotorDataLevel="1" DisableMode="0">
+							<Data>fa00</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32772" MotorDataLevel="1" DisableMode="0">
+							<Data>fa00</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32777" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32818" MotorDataLevel="1" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32818" MotorDataLevel="1" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32819" MotorDataLevel="1" DisableMode="0">
+							<Data>0300</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32819" MotorDataLevel="1" DisableMode="0">
+							<Data>0300</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32820" MotorDataLevel="0" DisableMode="0">
+							<Data>b80b</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32820" MotorDataLevel="0" DisableMode="0">
+							<Data>b80b</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32821" MotorDataLevel="1" DisableMode="0">
+							<Data>0c002200414d3233374c2d3030303000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32821" MotorDataLevel="1" DisableMode="0">
+							<Data>0c002200414d3233374c2d3030303000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32822" MotorDataLevel="1" DisableMode="0">
+							<Data>100022004158353230332d303030302d23232323</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32822" MotorDataLevel="1" DisableMode="0">
+							<Data>100022004158353230332d303030302d23232323</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32823" MotorDataLevel="1" DisableMode="0">
+							<Data>4402</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32823" MotorDataLevel="1" DisableMode="0">
+							<Data>4402</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32824" MotorDataLevel="1" DisableMode="0">
+							<Data>03100000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32824" MotorDataLevel="1" DisableMode="0">
+							<Data>03100000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32825" MotorDataLevel="1" DisableMode="0">
+							<Data>7869</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32825" MotorDataLevel="1" DisableMode="0">
+							<Data>7869</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32827" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32827" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32828" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32828" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32829" MotorDataLevel="1" DisableMode="0">
+							<Data>0200</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32829" MotorDataLevel="1" DisableMode="0">
+							<Data>0200</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32830" MotorDataLevel="1" DisableMode="0">
+							<Data>080008008403500064000100</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32830" MotorDataLevel="1" DisableMode="0">
+							<Data>080008008403500064000100</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32834" MotorDataLevel="1" DisableMode="0">
+							<Data>080008000e060000b80b0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32834" MotorDataLevel="1" DisableMode="0">
+							<Data>080008000e060000b80b0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32835" MotorDataLevel="0" DisableMode="0">
+							<Data>e02e</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32835" MotorDataLevel="0" DisableMode="0">
+							<Data>e02e</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32836" MotorDataLevel="1" DisableMode="0">
+							<Data>0400040064006400</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32836" MotorDataLevel="1" DisableMode="0">
+							<Data>0400040064006400</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32837" MotorDataLevel="0" DisableMode="0">
+							<Data>040004002c010000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32837" MotorDataLevel="0" DisableMode="0">
+							<Data>040004002c010000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32838" MotorDataLevel="1" DisableMode="0">
+							<Data>9600</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32838" MotorDataLevel="1" DisableMode="0">
+							<Data>9600</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32839" MotorDataLevel="1" DisableMode="0">
+							<Data>0400040064000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32839" MotorDataLevel="1" DisableMode="0">
+							<Data>0400040064000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32840" MotorDataLevel="0" DisableMode="0">
+							<Data>06000600000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32840" MotorDataLevel="0" DisableMode="0">
+							<Data>06000600000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32857" MotorDataLevel="1" DisableMode="0">
+							<Data>24002400028000003e0000003e000000c980000006090000a00f0000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32857" MotorDataLevel="1" DisableMode="0">
+							<Data>24002400028000003e0000003e000000c980000006090000a00f0000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32860" MotorDataLevel="1" DisableMode="0">
+							<Data>800c0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32860" MotorDataLevel="1" DisableMode="0">
+							<Data>800c0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32861" MotorDataLevel="1" DisableMode="0">
+							<Data>40060000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32861" MotorDataLevel="1" DisableMode="0">
+							<Data>40060000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32868" MotorDataLevel="0" DisableMode="0">
+							<Data>f00a0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32868" MotorDataLevel="0" DisableMode="0">
+							<Data>f00a0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32869" MotorDataLevel="0" DisableMode="0">
+							<Data>a00f</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32869" MotorDataLevel="0" DisableMode="0">
+							<Data>a00f</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32870" MotorDataLevel="0" DisableMode="0">
+							<Data>3200</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32870" MotorDataLevel="0" DisableMode="0">
+							<Data>3200</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32871" MotorDataLevel="0" DisableMode="0">
+							<Data>c800</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32871" MotorDataLevel="0" DisableMode="0">
+							<Data>c800</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32872" MotorDataLevel="0" DisableMode="0">
+							<Data>5000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32872" MotorDataLevel="0" DisableMode="0">
+							<Data>5000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32873" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32873" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32874" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32874" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32893" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32893" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32894" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32894" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32895" MotorDataLevel="0" DisableMode="0">
+							<Data>0400040000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32895" MotorDataLevel="0" DisableMode="0">
+							<Data>0400040000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32918" MotorDataLevel="1" DisableMode="0">
+							<Data>e000e000000000005265736f6c76657223703266386b487a6e302e35706869306465670000000000000000000000000000000000040000000000000003000400000000000300020832000000102700007e04ee02f401e80300000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a6004a019b0000000000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32918" MotorDataLevel="1" DisableMode="0">
+							<Data>e000e000000000005265736f6c76657223703266386b487a6e302e35706869306465670000000000000000000000000000000000060000000000000003000600000000000300020832000000102700007e04ee02f401e80300000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a6004a019b0000000000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32920" MotorDataLevel="1" DisableMode="0">
+							<Data>01000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32920" MotorDataLevel="1" DisableMode="0">
+							<Data>01000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32921" MotorDataLevel="1" DisableMode="0">
+							<Data>01000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32921" MotorDataLevel="1" DisableMode="0">
+							<Data>01000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32922" MotorDataLevel="0" DisableMode="0">
+							<Data>080008000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32922" MotorDataLevel="0" DisableMode="0">
+							<Data>080008000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32923" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32923" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32933" MotorDataLevel="0" DisableMode="0">
+							<Data>3c003c000000000000000000f401b80b0000000000000000f4016400f401f40104000500e1009600b80b84030000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32933" MotorDataLevel="0" DisableMode="0">
+							<Data>3c003c000000000000000000f401b80b0000000000000000f4016400f401f40104000500e1009600b80b84030000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32935" MotorDataLevel="0" DisableMode="0">
+							<Data>140014000000f4015a001e00000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32935" MotorDataLevel="0" DisableMode="0">
+							<Data>140014000000f4015a001e00000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32948" MotorDataLevel="0" DisableMode="0">
+							<Data>e000e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32948" MotorDataLevel="0" DisableMode="0">
+							<Data>e000e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32950" MotorDataLevel="0" DisableMode="0">
+							<Data>01000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32950" MotorDataLevel="0" DisableMode="0">
+							<Data>01000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32951" MotorDataLevel="0" DisableMode="0">
+							<Data>01000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32951" MotorDataLevel="0" DisableMode="0">
+							<Data>01000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32952" MotorDataLevel="0" DisableMode="0">
+							<Data>080008000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32952" MotorDataLevel="0" DisableMode="0">
+							<Data>080008000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32953" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="32953" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32969" MotorDataLevel="0" DisableMode="0">
+							<Data>a00f</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32970" MotorDataLevel="0" DisableMode="0">
+							<Data>6400</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32971" MotorDataLevel="0" DisableMode="0">
+							<Data>6400</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32972" MotorDataLevel="0" DisableMode="0">
+							<Data>0100</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32976" MotorDataLevel="0" DisableMode="0">
+							<Data>2c002c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32979" MotorDataLevel="0" DisableMode="0">
+							<Data>6400</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32980" MotorDataLevel="0" DisableMode="0">
+							<Data>f401</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32982" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32984" MotorDataLevel="1" DisableMode="0">
+							<Data>c422</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32988" MotorDataLevel="0" DisableMode="0">
+							<Data>18001800000000000000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="32989" MotorDataLevel="0" DisableMode="0">
+							<Data>18001800000000000000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33018" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33018" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33019" MotorDataLevel="0" DisableMode="0">
+							<Data>080008000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33019" MotorDataLevel="0" DisableMode="0">
+							<Data>080008000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33070" MotorDataLevel="0" DisableMode="0">
+							<Data>1000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33070" MotorDataLevel="0" DisableMode="0">
+							<Data>1000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33071" MotorDataLevel="0" DisableMode="0">
+							<Data>0e00</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33071" MotorDataLevel="0" DisableMode="0">
+							<Data>0e00</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33072" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33072" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33073" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33073" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33081" MotorDataLevel="0" DisableMode="0">
+							<Data>30003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33081" MotorDataLevel="0" DisableMode="0">
+							<Data>30003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33082" MotorDataLevel="0" DisableMode="0">
+							<Data>30003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33082" MotorDataLevel="0" DisableMode="0">
+							<Data>30003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33083" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33083" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33088" MotorDataLevel="0" DisableMode="0">
+							<RetainData>100010006a00120066000100ec0c3d00ec0c3d00</RetainData>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33093" MotorDataLevel="0" DisableMode="0">
+							<RetainData>16001a004a616e2031322032303131202c2031313a33353a3531</RetainData>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33118" MotorDataLevel="0" DisableMode="0">
+							<Data>0100</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33118" MotorDataLevel="0" DisableMode="0">
+							<Data>0100</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33119" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33119" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33168" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33168" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33169" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33169" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33170" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33219" MotorDataLevel="1" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33219" MotorDataLevel="1" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33279" MotorDataLevel="1" DisableMode="0">
+							<Data>9600</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33279" MotorDataLevel="1" DisableMode="0">
+							<Data>9600</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33280" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33280" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33281" MotorDataLevel="0" DisableMode="0">
+							<Data>400040008841000088410000010001000000040000000000d6ffffff4c030000000000000000000000000000000000000000000000000000000000000000000001000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33281" MotorDataLevel="0" DisableMode="0">
+							<Data>4000400000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000040860000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33568" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33768" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33768" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33769" MotorDataLevel="0" DisableMode="0">
+							<Data>0700</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33771" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="1" IDN="33771" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33772" MotorDataLevel="0" DisableMode="0">
+							<Data>0700</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33774" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33775" MotorDataLevel="0" DisableMode="0">
+							<Data>0300</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33777" MotorDataLevel="0" DisableMode="0">
+							<Data>00000000</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="33778" MotorDataLevel="0" DisableMode="0">
+							<Data>0300</Data>
+						</InitCmd>
+						<InitCmd DriveNo="0" IDN="34768" MotorDataLevel="0" DisableMode="0">
+							<Data>0000</Data>
+						</InitCmd>
+					</InitCmds>
+					<StatusBar>
+						<Element option="0" SortOder="0">
+							<IDN>S-0-0135</IDN>
+						</Element>
+						<Element option="0" SortOder="0">
+							<IDN>S-0-0390</IDN>
+							<Width>85</Width>
+						</Element>
+						<Element option="0" SortOder="0">
+							<IDN>S-0-0095</IDN>
+							<Width>100</Width>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0053</IDN>
+						</Element>
+						<Element option="0" SortOder="0">
+							<IDN>P-0-0205</IDN>
+							<SubItem>Bit0</SubItem>
+						</Element>
+						<Element option="0" SortOder="0">
+							<IDN>P-0-0205</IDN>
+							<SubItem>Bit3</SubItem>
+						</Element>
+						<Element option="0" SortOder="0">
+							<IDN>S-0-0384</IDN>
+						</Element>
+						<Element option="0" SortOder="0">
+							<IDN>S-0-0135</IDN>
+							<SubItem>ActualOperationMode</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0312</IDN>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0097</IDN>
+							<SubItem>MotorBrakeUnlocked</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>S-0-0380</IDN>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>S-0-0381</IDN>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0063</IDN>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0453</IDN>
+							<SubItem>Active</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0453</IDN>
+							<SubItem>ReadyToEnable</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0453</IDN>
+							<SubItem>IGreaterThanInom</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0453</IDN>
+							<SubItem>IPeakLimitReached</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0453</IDN>
+							<SubItem>IreductionActive</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0453</IDN>
+							<SubItem>UmaxReached</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0453</IDN>
+							<SubItem>FieldWeakeningActive</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0503</IDN>
+							<SubItem>Active</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0503</IDN>
+							<SubItem>ReadyToEnable</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0503</IDN>
+							<SubItem>PosDirectionEnabled</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0503</IDN>
+							<SubItem>NegDirectionEnabled</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0503</IDN>
+							<SubItem>AccDecLimitationActive</SubItem>
+						</Element>
+						<Element option="1" SortOder="0">
+							<IDN>P-0-0503</IDN>
+							<SubItem>vLimitationActive</SubItem>
+						</Element>
+						<Element option="0" SortOder="0">
+							<IDN>P-0-0503</IDN>
+							<SubItem>vZeroReached</SubItem>
+						</Element>
+						<Element option="0" SortOder="0">
+							<IDN>P-0-0503</IDN>
+							<SubItem>CmdMovPositive</SubItem>
+						</Element>
+						<Element option="0" SortOder="0">
+							<IDN>P-0-0503</IDN>
+							<SubItem>CmdMovNegative</SubItem>
+						</Element>
+						<Element option="0" SortOder="0">
+							<IDN>P-0-0215</IDN>
+							<Width>167</Width>
+						</Element>
+					</StatusBar>
+				</AX5XXXDriveTool>
+			</Xml>
+			<EtherCAT SlaveType="2" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CfgModeSafeOp="true" DcInfoAvailable="true" DownloadPdoCfg="true" CycleMBoxPollingTime="0" FoeType="1" SoeChannels="2" VendorId="#x00000002" ProductCode="#x14536012" RevisionNo="#x000b0000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" AutoRestoreAfterWcOk="true" CheckRevisionNoType="4" PortPhys="17" Type="AX5203-0000 EtherCAT Drive (SoE, 2 Ch.)" Desc="AX5203-0000-0011" PortABoxInfo="#x01000012">
+				<SyncMan>001880002600010001000000800080008000001826010000</SyncMan>
+				<SyncMan>001a80002200010002000000800080008000001a22010000</SyncMan>
+				<SyncMan>001010002400010003000000000000000000001024010000</SyncMan>
+				<SyncMan>001110002200010004000000000000000000001122010000</SyncMan>
+				<Fmmu>0000000000000000001000020100000001000000000000000000000000000000</Fmmu>
+				<Fmmu>0000000000000000001100010100000002000000000000000000000000000000</Fmmu>
+				<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+				<BootStrapData>0010140200181402</BootStrapData>
+				<DcData>3007000090d0030050c30000000000000000ffff000000000000000000000000</DcData>
+				<DcMode>446353796e633235300000000000000053796e63206379636c652074696d653a20323530b5730000000000000000000090d0030050c3000000000000ffff30070000000000000000000000000000000000000000000000000000000000000000</DcMode>
+				<DcMode>446353796e633132350000000000000053796e63206379636c652074696d653a20313235b5730000000000000000000048e80100a861000000000000ffff30070000000000000000000000000000000000000000000000000000000000000000</DcMode>
+				<MBoxUserCmdData>020005000a0000001500000000000000000000000000000000000000000000000340010000000000d007546e637963202d204e43206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001700000000000000000000000000000000000000000000000340020000000000d0075473637963202d20436f6d6d206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000000e0000000000000000000000000000000000000000000000034020000000000002004f7065726174696f6e206d6f646500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000000e0000000000000000000000000000000000000000000000234020000000000002004f7065726174696f6e206d6f646500</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500ec0000000f00000000000000000000000000000000000000000000000340968000000000e000e000000000005265736f6c76657223703266386b487a6e302e35706869306465670000000000000000000000000000000000040000000000000003000400000000000300020832000000102700007e04ee02f401e80300000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a6004a019b0000000000000000000000000000000000000000000000466565646261636b2031207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001400000000000000000000000000000000000000000000000340c98000000000a00f4e6f6d696e616c206d61696e20766f6c7461676500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002500000000000000000000000000000000000000000000000340ca800000000064004d61696e20766f6c7461676520706f73697469766520746f6c6572616e63652072616e676500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002500000000000000000000000000000000000000000000000340cb800000000064004d61696e20766f6c74616765206e6567617469766520746f6c6572616e63652072616e676500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d00000000000000000000000000000000000000000000000340cc80000000000100506f776572204d616e6167656d656e7420636f6e74726f6c20776f726400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001c0000001500000000000000000000000000000000000000000000000340368000000000100022004158353230332d303030302d23232323436f6e66696775726564206472697665207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001800000015000000000000000000000000000000000000000000000003403580000000000c002200414d3233374c2d3030303000436f6e66696775726564206d6f746f72207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000170000000000000000000000000000000000000000000000034032800000000000004d6f746f7220636f6e737472756374696f6e207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001300000000000000000000000000000000000000000000000340d88000000000c4224d6178204443204c696e6b20766f6c7461676500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000021000000000000000000000000000000000000000000000003408800000000005e960900506f73697469766520616363656c65726174696f6e206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000021000000000000000000000000000000000000000000000003408900000000005e9609004e6567617469766520616363656c65726174696f6e206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001b00000000000000000000000000000000000000000000000340c38100000000000043757272656e7420636f6e74726f6c6c65722073657474696e677300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001300000000000000000000000000000000000000000000000340710000000000941100004d6178696d756d206d6f746f7220737065656400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000140000000000000000000000000000000000000000000000034033800000000003004e756d626572206f6620706f6c6520706169727300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000090000000000000000000000000000000000000000000000034037800000000044024d6f746f7220454d4600</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d0000000000000000000000000000000000000000000000034046800000000096004d6f746f7220636f6e74696e756f7573207374616c6c20746f7271756500</MBoxUserCmdData>
+				<MBoxUserCmdData>0200050010000000150000000000000000000000000000000000000000000000034047800000000004000400640000004d656368616e6963616c206d6f746f72206461746100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000012000000000000000000000000000000000000000000000003406d0000000000001900004d6f746f72207065616b2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001e000000000000000000000000000000000000000000000003406f0000000000400600004d6f746f7220636f6e74696e756f7573207374616c6c2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500140000001400000000000000000000000000000000000000000000000340428000000000080008000e060000b80b0000456c656374726963206d6f746f72206d6f64656c00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001900000000000000000000000000000000000000000000000340c9000000000020034d6f746f72207761726e696e672074656d706572617475726500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001b00000000000000000000000000000000000000000000000340cc000000000078054d6f746f72207368757420646f776e2074656d706572617475726500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d000000000000000000000000000000000000000000000003403980000000007869456c656374726963616c20636f6d6d75746174696f6e206f666673657400</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500480000002800000000000000000000000000000000000000000000000340a580000000003c003c000000000000000000f401b80b0000000000000000f4016400f401f40104000500e1009600b80b84030000000000000000000000000000000000000000436f6d6d75746174696f6e206f66667365742063616c6962726174696f6e20706172616d6574657200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001400000013000000000000000000000000000000000000000000000003403e8000000000080008008403500064000100546865726d616c206d6f746f72206d6f64656c00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001000000027000000000000000000000000000000000000000000000003404480000000000400040064006400546865726d616c206f7665726c6f616420666163746f7220286d6f746f722077696e64696e672900</MBoxUserCmdData>
+				<MBoxUserCmdData>0200050030000000160000000000000000000000000000000000000000000000034059800000000024002400028000003e0000003e000000c980000006090000a00f00000000000000000000000000004d6f746f72206461746120636f6e73747261696e747300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000017000000000000000000000000000000000000000000000003400280000000003e0043757272656e74206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001a000000000000000000000000000000000000000000000003405d800000000040060000436f6e66696775726564206368616e6e656c2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f000000000000000000000000000000000000000000000003405c8000000000800c0000436f6e66696775726564206368616e6e656c207065616b2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000020000000000000000000000000000000000000000000000003406a0000000000590343757272656e74206c6f6f702070726f706f7274696f6e616c206761696e203100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002b000000000000000000000000000000000000000000000003406b0000000000070043757272656e7420636f6e74726f6c206c6f6f7020696e74656772616c20616374696f6e2074696d65203100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f00000000000000000000000000000000000000000000000340640000000000e204000056656c6f63697479206c6f6f702070726f706f7274696f6e616c206761696e00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002200000000000000000000000000000000000000000000000340650000000000200056656c6f63697479206c6f6f7020696e74656772616c20616374696f6e2074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f00000000000000000000000000000000000000000000000340388000000000031000004d6178206d6f746f722073706565642077697468206d617820746f7271756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001c000000000000000000000000000000000000000000000003405b00000000002bc9cc044269706f6c61722076656c6f63697479206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d000000000000000000000000000000000000000000000003403d800000000002004d6f746f722074656d70657261747572652073656e736f72207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c000000190000000000000000000000000000000000000000000000034098800000000001000000466565646261636b20312067656172206e756d657261746f7200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001b0000000000000000000000000000000000000000000000034099800000000001000000466565646261636b203120676561722064656e6f6d696e61746f7200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000018000000000000000000000000000000000000000000000003400380000000007d0056656c6f63697479206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002600000000000000000000000000000000000000000000000340ff8100000000960056656c6f636974792066696c746572206c6f7720706173732074696d6520636f6e7374616e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001800000000000000000000000000000000000000000000000340048000000000fa00506f736974696f6e206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001c0000001500000000000000000000000000000000000000000000002340368000000000100022004158353230332d303030302d23232323436f6e66696775726564206472697665207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001800000015000000000000000000000000000000000000000000000023403580000000000c002200414d3233374c2d3030303000436f6e66696775726564206d6f746f72207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000170000000000000000000000000000000000000000000000234032800000000000004d6f746f7220636f6e737472756374696f6e207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000021000000000000000000000000000000000000000000000023408800000000005e960900506f73697469766520616363656c65726174696f6e206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000021000000000000000000000000000000000000000000000023408900000000005e9609004e6567617469766520616363656c65726174696f6e206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001b00000000000000000000000000000000000000000000002340c38100000000000043757272656e7420636f6e74726f6c6c65722073657474696e677300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001300000000000000000000000000000000000000000000002340710000000000941100004d6178696d756d206d6f746f7220737065656400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000140000000000000000000000000000000000000000000000234033800000000003004e756d626572206f6620706f6c6520706169727300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000090000000000000000000000000000000000000000000000234037800000000044024d6f746f7220454d4600</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d0000000000000000000000000000000000000000000000234046800000000096004d6f746f7220636f6e74696e756f7573207374616c6c20746f7271756500</MBoxUserCmdData>
+				<MBoxUserCmdData>0200050010000000150000000000000000000000000000000000000000000000234047800000000004000400640000004d656368616e6963616c206d6f746f72206461746100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c00000012000000000000000000000000000000000000000000000023406d0000000000001900004d6f746f72207065616b2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001e000000000000000000000000000000000000000000000023406f0000000000400600004d6f746f7220636f6e74696e756f7573207374616c6c2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500140000001400000000000000000000000000000000000000000000002340428000000000080008000e060000b80b0000456c656374726963206d6f746f72206d6f64656c00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001900000000000000000000000000000000000000000000002340c9000000000020034d6f746f72207761726e696e672074656d706572617475726500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001b00000000000000000000000000000000000000000000002340cc000000000078054d6f746f72207368757420646f776e2074656d706572617475726500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d000000000000000000000000000000000000000000000023403980000000007869456c656374726963616c20636f6d6d75746174696f6e206f666673657400</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500480000002800000000000000000000000000000000000000000000002340a580000000003c003c000000000000000000f401b80b0000000000000000f4016400f401f40104000500e1009600b80b84030000000000000000000000000000000000000000436f6d6d75746174696f6e206f66667365742063616c6962726174696f6e20706172616d6574657200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001400000013000000000000000000000000000000000000000000000023403e8000000000080008008403500064000100546865726d616c206d6f746f72206d6f64656c00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005001000000027000000000000000000000000000000000000000000000023404480000000000400040064006400546865726d616c206f7665726c6f616420666163746f7220286d6f746f722077696e64696e672900</MBoxUserCmdData>
+				<MBoxUserCmdData>0200050030000000160000000000000000000000000000000000000000000000234059800000000024002400028000003e0000003e000000c980000006090000a00f00000000000000000000000000004d6f746f72206461746120636f6e73747261696e747300</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000017000000000000000000000000000000000000000000000023400280000000003e0043757272656e74206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001a000000000000000000000000000000000000000000000023405d800000000040060000436f6e66696775726564206368616e6e656c2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f000000000000000000000000000000000000000000000023405c8000000000800c0000436f6e66696775726564206368616e6e656c207065616b2063757272656e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000020000000000000000000000000000000000000000000000023406a0000000000590343757272656e74206c6f6f702070726f706f7274696f6e616c206761696e203100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002b000000000000000000000000000000000000000000000023406b0000000000070043757272656e7420636f6e74726f6c206c6f6f7020696e74656772616c20616374696f6e2074696d65203100</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f00000000000000000000000000000000000000000000002340640000000000e204000056656c6f63697479206c6f6f702070726f706f7274696f6e616c206761696e00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002200000000000000000000000000000000000000000000002340650000000000200056656c6f63697479206c6f6f7020696e74656772616c20616374696f6e2074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001f00000000000000000000000000000000000000000000002340388000000000031000004d6178206d6f746f722073706565642077697468206d617820746f7271756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001c000000000000000000000000000000000000000000000023405b00000000002bc9cc044269706f6c61722076656c6f63697479206c696d69742076616c756500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001d000000000000000000000000000000000000000000000023403d800000000002004d6f746f722074656d70657261747572652073656e736f72207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c000000190000000000000000000000000000000000000000000000234098800000000001000000466565646261636b20312067656172206e756d657261746f7200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000c0000001b0000000000000000000000000000000000000000000000234099800000000001000000466565646261636b203120676561722064656e6f6d696e61746f7200</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a00000018000000000000000000000000000000000000000000000023400380000000007d0056656c6f63697479206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000002600000000000000000000000000000000000000000000002340ff8100000000960056656c6f636974792066696c746572206c6f7720706173732074696d6520636f6e7374616e7400</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a0000001800000000000000000000000000000000000000000000002340048000000000fa00506f736974696f6e206374726c206379636c652074696d6500</MBoxUserCmdData>
+				<MBoxUserCmdData>02000500ec0000000f00000000000000000000000000000000000000000000002340968000000000e000e000000000005265736f6c76657223703266386b487a6e302e35706869306465670000000000000000000000000000000000060000000000000003000600000000000300020832000000102700007e04ee02f401e80300000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a6004a019b0000000000000000000000000000000000000000000000466565646261636b2031207479706500</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000140000000000000000000000000000000000000000000000034030810000000001004c6f67676572206d657373616765206c6576656c00</MBoxUserCmdData>
+				<MBoxUserCmdData>020005000a000000140000000000000000000000000000000000000000000000234030810000000001004c6f67676572206d657373616765206c6576656c00</MBoxUserCmdData>
+				<Pdo Name="AT 1" Index="#x0010" Flags="#x0001" SyncMan="3">
+					<Entry Name="Drive status word" Index="#x0087" Flags="#x00000800">
+						<Type>UINT</Type>
+					</Entry>
+					<Entry Name="Position feedback 1 value" Index="#x0033">
+						<Type>DINT</Type>
+					</Entry>
+					<Entry Name="Torque feedback value" Index="#x0054">
+						<Type>INT</Type>
+					</Entry>
+				</Pdo>
+				<Pdo Name="AT 2" Index="#x1010" Flags="#x0001" SyncMan="3">
+					<Entry Name="Drive status word" Index="#x0087" Flags="#x00000800">
+						<Type>UINT</Type>
+					</Entry>
+					<Entry Name="Position feedback 1 value" Index="#x0033">
+						<Type>DINT</Type>
+					</Entry>
+					<Entry Name="Torque feedback value" Index="#x0054">
+						<Type>INT</Type>
+					</Entry>
+				</Pdo>
+				<Pdo Name="MDT 1" Index="#x0018" InOut="1" Flags="#x0001" SyncMan="2">
+					<Entry Name="Master control word" Index="#x0086" Flags="#x00000800">
+						<Type>UINT</Type>
+					</Entry>
+					<Entry Name="Velocity command value" Index="#x0024">
+						<Type>DINT</Type>
+					</Entry>
+					<Entry Name="Bipolar torque limit value" Index="#x005c">
+						<Type>INT</Type>
+					</Entry>
+				</Pdo>
+				<Pdo Name="MDT 2" Index="#x1018" InOut="1" Flags="#x0001" SyncMan="2">
+					<Entry Name="Master control word" Index="#x0086" Flags="#x00000800">
+						<Type>UINT</Type>
+					</Entry>
+					<Entry Name="Velocity command value" Index="#x0024">
+						<Type>DINT</Type>
+					</Entry>
+					<Entry Name="Bipolar torque limit value" Index="#x005c">
+						<Type>INT</Type>
+					</Entry>
+				</Pdo>
+			</EtherCAT>
+		</Box>
+		<EtherCAT DcSyncMode="3"/>
+	</Device>
+	<Mappings>
+		<OwnerA Name="__THIS__">
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1_X">
+				<Link VarA="Drive 30 (AX5203-0000-0011)^AT 1^Drive status word" VarB="Drive^Inputs^In^nState1" Size="8" OffsA="8"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^AT 1^Drive status word" VarB="Drive^Inputs^In^nState2"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^AT 1^Position feedback 1 value" VarB="Enc^Inputs^In^nDataIn1"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^AT 1^Torque feedback value" VarB="Drive^Inputs^In^nDataIn3[0]"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^InfoData^DcInputShift" VarB="Enc^Inputs^In^nDcInputTime"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^InfoData^DcOutputShift" VarB="Drive^Inputs^In^nDcOutputTime"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^MDT 1^Master control word" VarB="Drive^Outputs^Out^nCtrl1" Size="8" OffsA="8"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^MDT 1^Velocity command value" VarB="Drive^Outputs^Out^nDataOut2"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^WcState^InputToggle" VarB="Drive^Inputs^In^nState4" Size="1" OffsB="1"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^WcState^InputToggle" VarB="Enc^Inputs^In^nState4" Size="1" OffsB="1"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^WcState^WcState" VarB="Drive^Inputs^In^nState4"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^WcState^WcState" VarB="Enc^Inputs^In^nState4"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1_Y">
+				<Link VarA="Drive 30 (AX5203-0000-0011)^AT 2^Drive status word" VarB="Drive^Inputs^In^nState1" Size="8" OffsA="8"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^AT 2^Drive status word" VarB="Drive^Inputs^In^nState2"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^AT 2^Position feedback 1 value" VarB="Enc^Inputs^In^nDataIn1"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^AT 2^Torque feedback value" VarB="Drive^Inputs^In^nDataIn3[0]"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^InfoData^DcInputShift" VarB="Enc^Inputs^In^nDcInputTime"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^InfoData^DcOutputShift" VarB="Drive^Inputs^In^nDcOutputTime"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^MDT 2^Master control word" VarB="Drive^Outputs^Out^nCtrl1" Size="8" OffsA="8"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^MDT 2^Velocity command value" VarB="Drive^Outputs^Out^nDataOut2"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^WcState^InputToggle" VarB="Drive^Inputs^In^nState4" Size="1" OffsB="1"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^WcState^InputToggle" VarB="Enc^Inputs^In^nState4" Size="1" OffsB="1"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^WcState^WcState" VarB="Drive^Inputs^In^nState4"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^WcState^WcState" VarB="Enc^Inputs^In^nState4"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M2_X">
+				<Link VarA="Drive 31 (AX5203-0000-0011)^AT 1^Drive status word" VarB="Drive^Inputs^In^nState1" Size="8" OffsA="8"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^AT 1^Drive status word" VarB="Drive^Inputs^In^nState2"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^AT 1^Position feedback 1 value" VarB="Enc^Inputs^In^nDataIn1"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^AT 1^Torque feedback value" VarB="Drive^Inputs^In^nDataIn3[0]"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^InfoData^DcInputShift" VarB="Enc^Inputs^In^nDcInputTime"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^InfoData^DcOutputShift" VarB="Drive^Inputs^In^nDcOutputTime"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^MDT 1^Master control word" VarB="Drive^Outputs^Out^nCtrl1" Size="8" OffsA="8"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^MDT 1^Velocity command value" VarB="Drive^Outputs^Out^nDataOut2"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^WcState^InputToggle" VarB="Drive^Inputs^In^nState4" Size="1" OffsB="1"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^WcState^InputToggle" VarB="Enc^Inputs^In^nState4" Size="1" OffsB="1"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^WcState^WcState" VarB="Drive^Inputs^In^nState4"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^WcState^WcState" VarB="Enc^Inputs^In^nState4"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M2_Y">
+				<Link VarA="Drive 31 (AX5203-0000-0011)^AT 2^Drive status word" VarB="Drive^Inputs^In^nState1" Size="8" OffsA="8"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^AT 2^Drive status word" VarB="Drive^Inputs^In^nState2"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^AT 2^Position feedback 1 value" VarB="Enc^Inputs^In^nDataIn1"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^AT 2^Torque feedback value" VarB="Drive^Inputs^In^nDataIn3[0]"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^InfoData^DcInputShift" VarB="Enc^Inputs^In^nDcInputTime"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^InfoData^DcOutputShift" VarB="Drive^Inputs^In^nDcOutputTime"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^MDT 2^Master control word" VarB="Drive^Outputs^Out^nCtrl1" Size="8" OffsA="8"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^MDT 2^Velocity command value" VarB="Drive^Outputs^Out^nDataOut2"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^WcState^InputToggle" VarB="Drive^Inputs^In^nState4" Size="1" OffsB="1"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^WcState^InputToggle" VarB="Enc^Inputs^In^nState4" Size="1" OffsB="1"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^WcState^WcState" VarB="Drive^Inputs^In^nState4"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^WcState^WcState" VarB="Enc^Inputs^In^nState4"/>
+			</OwnerB>
+			<OwnerB Name="TIPC^ECRH^ECRH Instance">
+				<Link VarA="Drive 30 (AX5203-0000-0011)^MDT 1^Bipolar torque limit value" VarB="PlcTask Outputs^GVL.dSetTorque_M1X"/>
+				<Link VarA="Drive 30 (AX5203-0000-0011)^MDT 2^Bipolar torque limit value" VarB="PlcTask Outputs^GVL.dSetTorque_M1Y"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^MDT 1^Bipolar torque limit value" VarB="PlcTask Outputs^GVL.dSetTorque_M2X"/>
+				<Link VarA="Drive 31 (AX5203-0000-0011)^MDT 2^Bipolar torque limit value" VarB="PlcTask Outputs^GVL.dSetTorque_M2Y"/>
+				<Link VarA="Term 1 (EK1200)^Term 2 (EL1004)^Channel 1^Input" VarB="PlcTask Inputs^GVL.bHomeSwitch_M1X"/>
+				<Link VarA="Term 1 (EK1200)^Term 2 (EL1004)^Channel 2^Input" VarB="PlcTask Inputs^GVL.bHomeSwitch_M1Y"/>
+				<Link VarA="Term 1 (EK1200)^Term 2 (EL1004)^Channel 3^Input" VarB="PlcTask Inputs^GVL.bHomeSwitch_M2X"/>
+				<Link VarA="Term 1 (EK1200)^Term 2 (EL1004)^Channel 4^Input" VarB="PlcTask Inputs^GVL.bHomeSwitch_M2Y"/>
+				<Link VarA="Term 1 (EK1200)^Term 6 (EL3104)^AI Standard Channel 1^Value" VarB="PlcTask Inputs^GVL.iTension_M1"/>
+				<Link VarA="Term 1 (EK1200)^Term 6 (EL3104)^AI Standard Channel 2^Value" VarB="PlcTask Inputs^GVL.iTension_M2"/>
+				<Link VarA="Term 1 (EK1200)^Term 7 (EL3314)^TC Inputs Channel 1^Value" VarB="PlcTask Inputs^GVL.iTC1_M1"/>
+				<Link VarA="Term 1 (EK1200)^Term 7 (EL3314)^TC Inputs Channel 2^Value" VarB="PlcTask Inputs^GVL.iTC2_M1"/>
+				<Link VarA="Term 1 (EK1200)^Term 7 (EL3314)^TC Inputs Channel 3^Value" VarB="PlcTask Inputs^GVL.iTC1_M2"/>
+				<Link VarA="Term 1 (EK1200)^Term 7 (EL3314)^TC Inputs Channel 4^Value" VarB="PlcTask Inputs^GVL.iTC2_M2"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>

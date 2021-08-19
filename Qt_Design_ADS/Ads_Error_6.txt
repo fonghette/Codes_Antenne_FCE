@@ -1,0 +1,3 @@
+- Ouvrir le panneau de configuration puis le pare-feu windows defender puis paramètres avancés
+- Ajouter aux règles de traffic entrant et sortant les ports TCP et UDP sans oublier de les activer
+- Ports spécifiques : 48898 (TCP) 48899 (UDP)

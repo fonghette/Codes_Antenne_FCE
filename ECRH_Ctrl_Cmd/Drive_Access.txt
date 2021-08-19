@@ -1,0 +1,5 @@
+- Lancer un scan des I/O à partir de Device
+- Add existing item à partir de l'ethercat, add les .tce correspondants au Drive dans le fichier essai_ECRH (le doc originel de la config ECRH)
+- Quand les drives sont ajoutés, supprimer les anciens
+- Penser à link les I/O aux axes et à définir l'ensemble des paramètres
+- Pour tester en ONLINE, activer les 3 enable et définir un override différent de 0
